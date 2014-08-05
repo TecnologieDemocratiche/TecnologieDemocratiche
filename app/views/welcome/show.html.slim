@@ -3,3 +3,12 @@ h1
   =current_user.email
 p
   ' You are really a valuable member of that association
+
+-if current_user.admin?
+  p
+    ' Wow! You are an admin! Please
+    ul
+      li
+        =link_to 'edit users', users_path
+      li
+        =link_to 'manage apps', '/oauth/applications'

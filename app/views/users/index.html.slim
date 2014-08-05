@@ -1,0 +1,21 @@
+h1 Users index
+
+= will_paginate @users, renderer: FoundationPagination::Rails
+table
+  thead
+    tr
+      th Email
+      th Full name
+      th Actions
+  tbody
+    - @users.each do |user|
+      tr
+        td = user.email
+        td = user.full_name
+        td
+          = link_to 'show', user, class: 'button success'
+          = link_to 'edit', edit_user_path(user), class: 'button'
+          = link_to 'destroy', user, method: :delete, class: 'button alert'
+= will_paginate @users, renderer: FoundationPagination::Rails
+
+=link_to 'New user', new_user_path, class: 'button primary'

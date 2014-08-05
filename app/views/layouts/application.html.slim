@@ -1,0 +1,31 @@
+doctype html
+html lang="en"
+  head
+    meta charset="utf-8" /
+    meta content="width=device-width, initial-scale=1.0" name="viewport" /
+    title= content_for?(:title) ? yield(:title) : "Tecnologie Democratiche"
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "vendor/modernizr"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  body
+    nav.top-bar data-topbar="" data-options="is_hover: false"
+      ul.title-area
+        li.name
+          h1
+            =link_to 'Tecnologie Democratiche', root_path
+        li.toggle-topbar.menu-icon
+          =link_to root_path do
+            span Menu
+      section.top-bar-section
+        ul.right
+          -if signed_in?
+            li.active
+              =link_to 'My Page', current_user
+            li.has-dropdown
+              a href="#"  Actions
+              ul.dropdown
+                li
+                  =link_to 'Logout', destroy_user_session_path, method: :delete
+    .row
+      = yield

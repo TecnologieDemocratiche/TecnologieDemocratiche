@@ -1,0 +1,22 @@
+=simple_form_for @user do |f|
+  = f.input :email
+  = f.input :password
+  .row
+    .columns.small-6
+      = f.input :name
+    .columns.small-6
+      = f.input :last_name
+  = f.input :birthdate, as: :string, input_html: {type: :date}
+  = f.input :address
+  .row
+    .columns.small-8
+      = f.input :city
+    .columns.small-4
+      = f.input :zip_code
+  = f.input :tax_code
+  .row
+    .columns.small-6
+      = f.input :member_since, as: :string, input_html: {type: :date}
+    .columns.small-6
+      = f.input :member_until, as: :string, input_html: {type: :date}
+  =f.submit class: 'button primary'
