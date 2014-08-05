@@ -1,5 +1,18 @@
 h1
-  =@user.full_name
+dl
+  dt
+    | Full name
+  dd
+    = @user.full_name
+  dt
+    | Email
+  dd
+    = @user.email
+  dt
+    | Birthdate
+    dd
+      = @user.birthdate
 
-=link_to 'Edit', edit_user_path(@user), class: 'button primary'
-=link_to 'List users', users_path, class: 'button'
+=link_to 'Edit', edit_user_path(@user), class: 'button primary' if can? :edit, @user
+=link_to 'List users', users_path, class: 'button' if can? :index, User
+

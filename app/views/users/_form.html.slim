@@ -1,12 +1,19 @@
 =simple_form_for @user do |f|
   = f.input :email
-  = f.input :password
+  -if @user.new_record?
+    = f.input :password
   .row
     .columns.small-6
       = f.input :name
     .columns.small-6
       = f.input :last_name
-  = f.input :birthdate, as: :string, input_html: {type: :date}
+  .row
+    .columns.small-4
+      = f.input :birthdate, as: :string, input_html: {type: :date}
+    .columns.small-6
+      = f.input :birthplace
+    .columns.small-2
+      = f.input :gender, as: :radio_buttons, collection: ['M','F']
   = f.input :address
   .row
     .columns.small-8

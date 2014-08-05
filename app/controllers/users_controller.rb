@@ -18,6 +18,11 @@ class UsersController < ApplicationController
   end
 
   def update
+    if @user.update(user_params)
+      redirect_to @user
+    else
+      render :edit
+    end
   end
 
   def create
@@ -36,6 +41,10 @@ class UsersController < ApplicationController
   protected
 
   def user_params
-    params[:user].permit(:email, :password, :name, :last_name, :birthdate, :address, :city, :zip_code, :tax_code, :member_since, :member_until)
+    params[:user].permit(:email, :password,
+                         :name, :last_name, :gender,
+                         :birthdate, :birthplace,
+                         :address, :city, :zip_code,
+                         :tax_code, :member_since, :member_until)
   end
 end
