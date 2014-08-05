@@ -32,10 +32,10 @@ module TecnologieDemocratiche
       Doorkeeper::ApplicationsController.layout "application"
 
       # Only Authorization endpoint
-      Doorkeeper::AuthorizationsController.layout "my_layout"
+      Doorkeeper::AuthorizationsController.layout "application"
 
       # Only Authorized Applications
-      Doorkeeper::AuthorizedApplicationsController.layout "my_layout"
+      Doorkeeper::AuthorizedApplicationsController.layout "application"
     end
   end
 end
