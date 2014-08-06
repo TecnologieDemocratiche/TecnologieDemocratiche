@@ -21,4 +21,10 @@ Rails.application.routes.draw do
 
   root 'welcome#show'
 
+  namespace :api do
+    namespace :v1 do
+      get '/me' => "credentials#me"
+    end
+  end
+
 end
