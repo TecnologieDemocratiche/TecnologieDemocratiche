@@ -6,6 +6,10 @@ class UsersController < ApplicationController
   end
 
   def index
+    if params[:status] == :waiting_for_approval.to_s
+      @users = @users.where(approved: false).where.not(confirmed_at: nil)
+    end
+
     @users = @users.paginate(page: params[:page], per_page: 20)
   end
 
@@ -42,6 +46,7 @@ class UsersController < ApplicationController
 
   def user_params
     params[:user].permit(:email, :password,
+                         :approved,
                          :name, :last_name, :gender,
                          :birthdate, :birthplace,
                          :address, :city, :zip_code,

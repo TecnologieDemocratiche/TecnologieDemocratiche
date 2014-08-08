@@ -38,3 +38,7 @@ gem 'cancancan'
 gem 'simple_form'
 
 gem 'will_paginate-foundation'
+
+gem 'paperclip'
+
+gem 'aws-sdk'

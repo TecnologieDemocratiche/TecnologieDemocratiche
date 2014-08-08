@@ -1,17 +1,24 @@
 h1 Users list
 
+= link_to "All Users", users_path, class: 'button'
+|
+= link_to "Users waiting approval", users_path(status: :waiting_for_approval), class: 'button'
+
+
 = will_paginate @users, renderer: FoundationPagination::Rails
 table
   thead
     tr
       th Email
       th Full name
+      th Status
       th Actions
   tbody
     - @users.each do |user|
       tr
         td = user.email
         td = user.full_name
+        td = user.status_label
         td
           = link_to 'show', user, class: 'button success'
           = link_to 'edit', edit_user_path(user), class: 'button'

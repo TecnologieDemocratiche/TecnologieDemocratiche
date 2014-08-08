@@ -1,0 +1,80 @@
+h2 Sign up
+
+= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = f.error_notification
+  .form-inputs
+    fieldset
+      legend Dati Account
+      = f.input :email, autofocus: true
+      = f.input :password, required: true
+      = f.input :password_confirmation, required: true
+    fieldset
+      legend Dati personali
+      .row
+        .columns.small-6
+          = f.input :name
+        .columns.small-6
+          = f.input :last_name
+      .row
+        .columns.small-4
+          = f.input :birthdate, as: :string, input_html: {type: :date}
+        .columns.small-6
+          = f.input :birthplace
+        .columns.small-2
+          = f.input :gender, as: :radio_buttons, collection: ['M','F']
+      = f.input :tax_code
+    fieldset
+      legend Residenza
+      = f.input :address
+      .row
+        .columns.small-8
+          = f.input :city
+        .columns.small-4
+          = f.input :zip_code
+    fieldset
+      legend Documentazione
+      = f.input :payment_recipe
+      = f.input :document
+    fieldset
+      legend Condizioni
+      strong Corrette informazioni
+      .panel
+        .text-center
+          | Il/La sottoscritto/a Consapevole
+        ul
+          li
+            | delle responsabilità e delle sanzioni penali previste dall’art. 76 del DPR 445/2000 per le false attestazioni e dichiarazioni mendaci;
+          li
+            | della perdita dei benefici conseguenti al provvedimento emanato sulla base di dichiarazioni non veritiere, ai sensi dell’art. 75 del citato DPR;
+          li
+            |dell'effettuazione di controlli sulla veridicità di quanto dichiarato, ai sensi dell'art. 71 del citato DPR;
+        .text-center
+          | Sotto la propria responsabilità
+          br
+          | DICHIARA
+          br
+          | Che le generalità indicate in fase di registrazione sono complete, corrette e veritiere
+      input type="checkbox" required=true
+      | * Lo dichiaro
+      br
+      strong Privacy
+      .panel
+        | bla bla bla
+      input type="checkbox" required=true
+      | * Accetto
+      br
+      strong Condizioni d'uso del sito
+      .panel
+        | bla bla bla
+      input type="checkbox" required=true
+      | * Accetto
+      br
+      strong Cookies
+      .panel
+        | bla bla bla
+      input type="checkbox" required=true
+      | * Accetto
+
+  .form-actions
+    = f.button :submit, "Sign up"
+= render "devise/shared/links"

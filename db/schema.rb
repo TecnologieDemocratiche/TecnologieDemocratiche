@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140805213314) do
+ActiveRecord::Schema.define(version: 20140807124818) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,33 +56,47 @@ ActiveRecord::Schema.define(version: 20140805213314) do
   add_index "oauth_applications", ["uid"], name: "index_oauth_applications_on_uid", unique: true, using: :btree
 
   create_table "users", force: true do |t|
-    t.string   "email",                            default: "",    null: false
-    t.string   "encrypted_password",               default: "",    null: false
-    t.string   "name",                                             null: false
-    t.string   "last_name",                                        null: false
+    t.string   "email",                                 default: "",    null: false
+    t.string   "encrypted_password",                    default: "",    null: false
+    t.string   "name",                                                  null: false
+    t.string   "last_name",                                             null: false
     t.string   "tax_code"
     t.date     "birthdate"
     t.string   "address"
     t.string   "zip_code"
     t.string   "city"
     t.string   "telephone"
-    t.date     "member_since",                                     null: false
-    t.date     "member_until",                                     null: false
+    t.datetime "member_since"
+    t.datetime "member_until"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                    default: 0,     null: false
+    t.integer  "sign_in_count",                         default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.boolean  "admin",                            default: false, null: false
+    t.boolean  "admin",                                 default: false, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "gender",                 limit: 1, default: "M",   null: false
+    t.string   "gender",                      limit: 1, default: "M",   null: false
     t.string   "birthplace"
+    t.string   "payment_recipe_file_name"
+    t.string   "payment_recipe_content_type"
+    t.integer  "payment_recipe_file_size"
+    t.datetime "payment_recipe_updated_at"
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.boolean  "approved",                              default: false, null: false
+    t.string   "unconfirmed_email"
   end
 
+  add_index "users", ["approved"], name: "index_users_on_approved", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 

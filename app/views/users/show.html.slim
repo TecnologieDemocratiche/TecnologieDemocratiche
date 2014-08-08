@@ -1,17 +1,19 @@
-h1
-dl
-  dt
-    | Full name
-  dd
-    = @user.full_name
-  dt
-    | Email
-  dd
-    = @user.email
-  dt
-    | Birthdate
-    dd
-      = @user.birthdate
+h1 =@user.full_name
+
+fieldset
+  dl
+    dt Account status
+    dd =@user.status_label
+    dt Full name
+    dd = @user.full_name
+    dt Email
+    dd = @user.email
+    dt Birthdate
+    dd = @user.birthdate
+    dt Member since
+    dd = @user.member_since
+    dt Member until
+    dd = @user.member_until
 
 =link_to 'Edit', edit_user_path(@user), class: 'button primary' if can? :edit, @user
 =link_to 'List users', users_path, class: 'button' if can? :index, User
