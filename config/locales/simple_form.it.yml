@@ -1,0 +1,42 @@
+it:
+  helpers:
+    submit:
+      user:
+        create: Registrati
+  simple_form:
+    "yes": 'Si'
+    "no": 'No'
+    required:
+      text: 'obbligatorio'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "Please review the problems below:"
+    # Labels and hints examples
+    labels:
+      defaults:
+        password: 'Password'
+        password_confirmation: 'Conferma Password'
+      user:
+        name: Nome
+        last_name: Cognome
+        birthdate: Data di nascita
+        birthplace: Luogo di nascita
+        gender: Sesso
+        tax_code: Codice Fiscale
+        address: Indirizzo
+        city: Comune
+        zip_code: CAP
+        payment_recipe: Ricevuta di pagamento quota associativa
+        document: Documento d'identità valido (fronte e retro)
+    #     new:
+    #       email: 'E-mail to sign in.'
+    #     edit:
+    #       email: 'E-mail.'
+    # hints:
+    #   defaults:
+    #     username: 'User name to sign in.'
+    #     password: 'No special characters, please.'
+

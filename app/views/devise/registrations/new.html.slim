@@ -1,4 +1,4 @@
-h2 Sign up
+h2 = t('.title')
 
 = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = f.error_notification
@@ -36,8 +36,7 @@ h2 Sign up
       = f.input :payment_recipe
       = f.input :document
     fieldset
-      legend Condizioni
-      strong Corrette informazioni
+      legend Corrette informazioni
       .panel
         .text-center
           | Il/La sottoscritto/a Consapevole
@@ -56,25 +55,28 @@ h2 Sign up
           | Che le generalità indicate in fase di registrazione sono complete, corrette e veritiere
       input type="checkbox" required=true
       | * Lo dichiaro
-      br
-      strong Privacy
+    fieldset
+      legend Privacy
+      = render 'layouts/shared/privacy'
       .panel
-        | bla bla bla
+        .scrollable
+          = render 'layouts/shared/privacy_text'
       input type="checkbox" required=true
       | * Accetto
-      br
-      strong Condizioni d'uso del sito
+    fieldset
+      legend Condizioni d'uso del sito
       .panel
-        | bla bla bla
+        .scrollable
+          = render 'layouts/shared/terms_text'
       input type="checkbox" required=true
       | * Accetto
-      br
-      strong Cookies
+    fieldset
+      legend Cookies
       .panel
-        | bla bla bla
+        .scrollable
+          = render 'layouts/shared/cookies_text'
       input type="checkbox" required=true
       | * Accetto
 
   .form-actions
-    = f.button :submit, "Sign up"
-= render "devise/shared/links"
+    = f.submit class: 'button'

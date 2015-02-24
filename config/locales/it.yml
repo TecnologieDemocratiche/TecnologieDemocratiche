@@ -1,0 +1,5 @@
+it:
+  devise:
+    registrations:
+      new:
+        title: "Crea il tuo account"
