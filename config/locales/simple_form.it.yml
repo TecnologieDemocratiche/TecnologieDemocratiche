@@ -17,6 +17,7 @@ it:
     # Labels and hints examples
     labels:
       defaults:
+        email: 'Email'
         password: 'Password'
         password_confirmation: 'Conferma Password'
       user:

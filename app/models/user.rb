@@ -14,10 +14,10 @@ class User < ActiveRecord::Base
   validates :payment_type, presence: true
   #validates :payment_recipe, presence: true, on: :create
   validates :document, presence: true, on: :create
-  validates :accept_cookies, acceptance: true
-  validates :accept_real_info, acceptance: true
-  validates :accept_privacy, acceptance: true
-  validates :accept_terms, acceptance: true
+  validates :accept_cookies, acceptance: {accept: true}
+  validates :accept_real_info, acceptance: {accept: true}
+  validates :accept_privacy, acceptance: {accept: true}
+  validates :accept_terms, acceptance: {accept: true}
 
   has_attached_file :payment_recipe
   validates_attachment_content_type :payment_recipe,

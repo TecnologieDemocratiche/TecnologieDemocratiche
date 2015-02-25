@@ -43,6 +43,7 @@ group :test do
   gem 'database_cleaner'
   gem 'capybara-webkit'
   gem 'capybara-screenshot'
+  gem 'faker'
 end
 
 group :production do
