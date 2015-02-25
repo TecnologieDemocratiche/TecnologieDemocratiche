@@ -67,7 +67,7 @@ h2 = t('.title')
     .panel
       .scrollable
         = render 'layouts/shared/terms_text'
-    = f.input :accept_terms
+    = f.input :accept_terms, as: :boolean
   fieldset
     legend Cookies
     .panel
