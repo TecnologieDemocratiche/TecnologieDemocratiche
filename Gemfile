@@ -23,7 +23,6 @@ gem 'will_paginate-foundation'
 gem 'paperclip'
 gem 'aws-sdk'
 gem 'font-awesome-rails'
-gem 'figaro'
 gem 'will_paginate'
 gem 'did_you_mean'
 gem 'sdoc', group: :doc
