@@ -1,0 +1,91 @@
+table.row
+  tr
+    td.wrapper.last
+      table.twelve.columns
+        tr
+          td
+            h1
+              = "Ciao, #{@resource.full_name}"
+
+            p.lead
+              ' Grazie per esserti registrato a Tecnologie Democratiche!
+            p
+              ' Hai appena fatto il primo passo per ottenere un account certificato.
+              ' Leggi attentamente questa email per concludere la procedura.
+          td.expander
+table.row.callout
+  tr
+    td.wrapper.last
+      table.twelve.columns
+        tr
+          td.panel
+            p
+              strong
+                ' Conferma l'indirizzo email fornito cliccando qui:
+            p
+              = link_to 'Conferma indirizzo email', confirmation_url(@resource, confirmation_token: @token)
+            p
+              = confirmation_url(@resource, confirmation_token: @token)
+          td.expander
+table.row.callout
+  tr
+    td.wrapper.last
+      table.twelve.columns
+        tr
+          td.panel
+            p
+              strong
+                ' Non hai ancora effettuato il pagamento?
+            p
+              ' Versa la quota associativa annuale di 20€ nel modo che preferisci:
+            p
+              strong
+                ' Iscrizione rapida
+              ' cliccando sul pulsante PayPal qui sotto:
+            p
+              ' PULSANTE
+            p
+              ' oppure tramite
+              strong
+                ' bonifico
+              ' su conto corrente
+            p
+              ' IBAN: IT76L0316501600000011758905
+              br
+              ' BIC/SWIFT: IWBKITMM
+              br
+              ' Banca: IW BANK
+              br
+              ' Intestato a: Tecnologie Democratiche
+          td.expander
+table.row.callout
+  tr
+    td.wrapper.last
+      table.twelve.columns
+        tr
+          td.panel
+            p
+              strong
+                ' Inviaci la ricevuta di pagamento
+            p
+              ' Tramite email a info@tecnologiedemocratiche.it, usando l'indirizzo
+              = @resource.email
+          td.expander
+table.row
+  tr
+    td.wrapper.last
+      table.twelve.columns
+        tr
+          td
+            p
+              ' Impiegheremo dai tre ai sette giorni per concludere la procedura di verifica e attivazione account.
+            p
+              ' Quando il tuo account sarà attivo riceverai una conferma a questo indirizzo email.
+            p
+              ' In caso di problemi un nostro incaricato provvederà a contattarti.
+            p.lead
+              ' Grazie per esserti registrato!
+            p
+              ' Il presidente di Tecnologie Democratiche,
+              br
+              ' Bohhhhhh

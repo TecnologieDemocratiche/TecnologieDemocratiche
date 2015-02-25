@@ -1,5 +1,4 @@
-module ApplicationHelper
-
+module EmailHelper
   def email_panel
     content_tag :table, class: 'row callout' do
       content_tag :tr do

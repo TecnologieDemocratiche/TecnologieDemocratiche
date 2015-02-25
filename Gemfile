@@ -27,6 +27,9 @@ gem 'figaro'
 gem 'will_paginate'
 gem 'did_you_mean'
 gem 'sdoc', group: :doc
+gem 'premailer'
+gem 'nokogiri'
+gem 'premailer-rails'
 
 group :development do
   gem 'better_errors'
