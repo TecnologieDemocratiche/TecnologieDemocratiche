@@ -3,3 +3,19 @@ it:
     registrations:
       new:
         title: "Crea il tuo account"
+    sessions:
+      new:
+        title: "Accedi"
+  buttons:
+    login: "Login"
+  payment_type:
+    not_yet: 'Non ancora'
+    paypal: 'Si. Con PayPal'
+    bank_transfer: 'Si. Con Bonifico'
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              taken: 'Email già registrata'

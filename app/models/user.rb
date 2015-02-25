@@ -11,8 +11,13 @@ class User < ActiveRecord::Base
   validates :address, presence: true
   validates :city, presence: true
   validates :zip_code, presence: true
-  validates :payment_recipe, presence: true, on: :create
+  validates :payment_type, presence: true
+  #validates :payment_recipe, presence: true, on: :create
   validates :document, presence: true, on: :create
+  validates :accept_cookies, acceptance: true
+  validates :accept_real_info, acceptance: true
+  validates :accept_privacy, acceptance: true
+  validates :accept_terms, acceptance: true
 
   has_attached_file :payment_recipe
   validates_attachment_content_type :payment_recipe,
@@ -20,6 +25,8 @@ class User < ActiveRecord::Base
 
   has_attached_file :document
   validates_attachment_content_type :document, content_type: ['application/pdf', 'application/msword', 'text/plain', 'image/jpeg', 'image/gif', 'image/png']
+
+  enum payment_type: [:not_yet, :paypal, :bank_transfer]
 
   STATUSES = {
       approved: 'approved',

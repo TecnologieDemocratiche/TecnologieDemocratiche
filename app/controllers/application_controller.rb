@@ -13,7 +13,8 @@ class ApplicationController < ActionController::Base
                :name, :last_name, :gender,
                :birthdate, :birthplace,
                :address, :city, :zip_code,
-               :tax_code, :document, :payment_recipe)
+               :tax_code, :document, :payment_recipe, :payment_type,
+               :accept_real_info, :accept_cookies, :accept_terms, :accept_privacy)
     }
   end
 
