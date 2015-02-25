@@ -54,14 +54,14 @@ h2 = t('.title')
         | DICHIARA
         br
         | Che le generalità indicate in fase di registrazione sono complete, corrette e veritiere
-    = f.input :accept_real_info
+    = f.input :accept_real_info, as: :boolean
   fieldset
     legend Privacy
     = render 'layouts/shared/privacy'
     .panel
       .scrollable
         = render 'layouts/shared/privacy_text'
-    = f.input :accept_privacy
+    = f.input :accept_privacy, as: :boolean
   fieldset
     legend Condizioni d'uso del sito
     .panel
@@ -73,6 +73,6 @@ h2 = t('.title')
     .panel
       .scrollable
         = render 'layouts/shared/cookies_text'
-    = f.input :accept_cookies
+    = f.input :accept_cookies, as: :boolean
   .form-actions
     = f.submit class: 'button'
