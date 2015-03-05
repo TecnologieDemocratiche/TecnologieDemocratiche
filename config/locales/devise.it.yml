@@ -1,9 +1,3 @@
-# Italian translation for Devise 3.2
-# Date: 2013-20-12
-# Author: xpepper
-# Note: Thanks to fuzziness (https://gist.github.com/fuzziness/5262777)
-# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
- 
 it:
   devise:
     confirmations:
@@ -20,6 +14,7 @@ it:
       timeout: "Sessione scaduta, accedere nuovamente per continuare."
       unauthenticated: "Devi accedere o registrarti per continuare."
       unconfirmed: "Devi confermare il tuo account per continuare."
+      not_approved: 'Il tuo account non è ancora stato approvato da un amministratore.'
     mailer:
       confirmation_instructions:
         subject: "Istruzioni per la conferma"

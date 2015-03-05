@@ -19,3 +19,6 @@ it:
           attributes:
             email:
               taken: 'Email già registrata'
+  documents: "Documentazione"
+  download_payment_recipe: "Download Payment recipe"
+  download_document: "Download document"

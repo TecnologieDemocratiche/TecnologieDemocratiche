@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+
   get 'users/show'
 
   get 'users/index'
@@ -17,7 +19,12 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :users
+  resources :users do
+    member do
+      get :download_document
+      get :download_payment_recipe
+    end
+  end
 
   root 'welcome#show'
 

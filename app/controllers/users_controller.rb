@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!
+
   load_and_authorize_resource
 
   def show
@@ -40,6 +41,14 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     redirect_to users_path
+  end
+
+  def download_document
+    redirect_to @user.document.expiring_url(10)
+  end
+
+  def download_payment_recipe
+    redirect_to @user.payment_recipe.expiring_url(10)
   end
 
   protected

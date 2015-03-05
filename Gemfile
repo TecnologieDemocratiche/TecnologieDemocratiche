@@ -30,6 +30,7 @@ gem 'sdoc', group: :doc
 gem 'premailer'
 gem 'nokogiri'
 gem 'premailer-rails'
+gem 'faker'
 
 group :development do
   gem 'better_errors'
@@ -46,7 +47,7 @@ group :test do
   gem 'database_cleaner'
   gem 'capybara-webkit'
   gem 'capybara-screenshot'
-  gem 'faker'
+
 end
 
 group :production do

@@ -14,6 +14,14 @@ fieldset
     dd = @user.member_since
     dt Member until
     dd = @user.member_until
+fieldset
+  legend = t('documents')
+  .row
+    .columns.small-6
+      = link_to t('download_payment_recipe'), download_payment_recipe_user_path(@user), target: :_blank
+  .row
+    .columns.small-6
+      = link_to t('download_document'), download_document_user_path(@user), target: :_blank
 
 =link_to 'Edit', edit_user_path(@user), class: 'button primary' if can? :edit, @user
 =link_to 'List users', users_path, class: 'button' if can? :index, User
