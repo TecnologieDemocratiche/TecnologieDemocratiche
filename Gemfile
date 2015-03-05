@@ -29,7 +29,6 @@ gem 'sdoc', group: :doc
 gem 'premailer'
 gem 'nokogiri'
 gem 'premailer-rails'
-gem 'getsen'
 
 group :development do
   gem 'better_errors'
