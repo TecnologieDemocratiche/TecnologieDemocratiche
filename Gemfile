@@ -38,6 +38,7 @@ group :development do
   gem 'quiet_assets'
   gem 'bullet'
   gem 'spring'
+  gem 'rubocop'
 end
 
 group :test do

@@ -1,3 +1,4 @@
+# apis for oauth2
 module Api
   module V1
     class CredentialsController < ApplicationController
