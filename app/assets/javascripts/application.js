@@ -15,6 +15,8 @@
 //= require jquery_ujs
 //= require jquery.turbolinks
 //= require foundation
+//= require nprogress
+//= require nprogress-turbolinks
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
