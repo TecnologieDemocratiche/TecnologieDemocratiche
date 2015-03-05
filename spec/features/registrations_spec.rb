@@ -23,5 +23,6 @@ describe "registration process", type: :feature do
     find(:css, '#user_accept_terms').set(true)
     click_button I18n.t('helpers.submit.user.create')
     expect(User.count).to eq 1
+
   end
 end

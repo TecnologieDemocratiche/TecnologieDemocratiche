@@ -29,6 +29,7 @@ gem 'sdoc', group: :doc
 gem 'premailer'
 gem 'nokogiri'
 gem 'premailer-rails'
+gem 'getsen'
 
 group :development do
   gem 'better_errors'
@@ -50,4 +51,6 @@ end
 
 group :production do
   gem 'rails_12factor'
+  gem 'sentry-raven'
+  gem 'newrelic_rpm'
 end
