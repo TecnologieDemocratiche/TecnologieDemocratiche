@@ -6,6 +6,8 @@ it:
     sessions:
       new:
         title: "Accedi"
+        become_member: "Diventa Socio di Tecnologie Democratiche!"
+        why_become_member_html: "Con solo 20 € ci aiuterai a migliorare la piattaforma Airesis e ne otterrai l'accesso in <strong>Modalità certificata</strong>!"
   buttons:
     login: "Login"
   payment_type:
