@@ -34,6 +34,12 @@ class User < ActiveRecord::Base
       waiting_for_email: 'waiting for email confirmation'
   }
 
+  after_create :send_admin_mail
+
+  def send_admin_mail
+    AdminMailer.new_user_waiting_for_approval(self).deliver_now
+  end
+
   def full_name
     "#{name} #{last_name}"
   end
