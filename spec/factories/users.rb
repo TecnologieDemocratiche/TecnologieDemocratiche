@@ -12,7 +12,7 @@ FactoryGirl.define do
     f.payment_type :not_yet
     f.birthdate { Date.today }
     f.birthplace 'Birthplace'
-    f.tax_code 'RDOLSN85M17D704W'
+    f.tax_code 'NGLLNZ92R30C357W'
     f.address 'Address'
     f.city 'City'
     f.zip_code '12345'

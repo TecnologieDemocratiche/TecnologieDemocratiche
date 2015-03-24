@@ -34,11 +34,9 @@ class User < ActiveRecord::Base
       waiting_for_email: 'waiting for email confirmation'
   }
 
-  after_create :send_admin_mail
+  after_create :notify_admin
 
-  def send_admin_mail
-    AdminMailer.new_user_waiting_for_approval(self).deliver_now
-  end
+  before_save :notify_user, if: Proc.new { |user| user.approved? && user.approved_changed? }
 
   def full_name
     "#{name} #{last_name}"
@@ -87,4 +85,14 @@ class User < ActiveRecord::Base
         email: email
     }
   end
+
+  private
+
+    def notify_admin
+      AdminMailer.new_user_waiting_for_approval(self).deliver_now
+    end
+
+    def notify_user
+      UserMailer.account_approved(self).deliver_now
+    end
 end
