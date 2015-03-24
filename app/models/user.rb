@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
   validates :accept_real_info, acceptance: {accept: true}
   validates :accept_privacy, acceptance: {accept: true}
   validates :accept_terms, acceptance: {accept: true}
+  validate :valid_tax_code
 
   has_attached_file :payment_recipe
   validates_attachment_content_type :payment_recipe,
@@ -81,4 +82,11 @@ class User < ActiveRecord::Base
         email: email
     }
   end
+
+  private
+
+    def valid_tax_code
+      errors.add(:tax_code, "is not valid") unless CodiceFiscale.valid?(tax_code)
+    end
+
 end
