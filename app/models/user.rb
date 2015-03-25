@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
       waiting_for_email: 'waiting for email confirmation'
   }
 
-  after_create :notify_admin
+  after_commit :notify_admin, on: :create
 
   before_save :notify_user, if: Proc.new { |user| user.approved? && user.approved_changed? }
 

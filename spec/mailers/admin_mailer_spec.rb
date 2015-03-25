@@ -12,10 +12,12 @@ describe AdminMailer do
     @admin.save!
     @admin.confirm!
 
+    @user = FactoryGirl.create(:user, approved: false)
     ActionMailer::Base.deliveries.clear
 
-    @user = FactoryGirl.create(:user, approved: false)
-    @sent_email = ActionMailer::Base.deliveries.second
+    # manually calling callback since we are in test environment
+    AdminMailer.new_user_waiting_for_approval(@user).deliver_now
+    @sent_email = ActionMailer::Base.deliveries.first
   end
 
   after(:each) do
@@ -24,7 +26,7 @@ describe AdminMailer do
 
   describe 'when a new user registers' do
     it 'sends an email' do
-      expect(ActionMailer::Base.deliveries.count).to eq(2)
+      expect(ActionMailer::Base.deliveries.count).to eq(1)
     end
 
     it 'sends it to administrators' do

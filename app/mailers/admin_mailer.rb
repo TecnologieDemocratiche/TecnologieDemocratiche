@@ -3,6 +3,6 @@ class AdminMailer < ApplicationMailer
 
   def new_user_waiting_for_approval(user)
     @user = user
-    mail( subject: "New User waiting for approval: #{@user.full_name}" )
+    mail( subject: I18n.t('admin_mailer.new_user_waiting_for_approval.subject', name: @user.full_name) )
   end
 end
