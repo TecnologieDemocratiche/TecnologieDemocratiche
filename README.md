@@ -7,6 +7,7 @@ It allows to register new people and gives them a login in the App which can be 
 
 [![Code Climate](https://codeclimate.com/github/TecnologieDemocratiche/TecnologieDemocratiche/badges/gpa.svg)](https://codeclimate.com/github/TecnologieDemocratiche/TecnologieDemocratiche)
 
+[![Build Status](https://travis-ci.org/TecnologieDemocratiche/TecnologieDemocratiche.svg?branch=feature%2F1239)](https://travis-ci.org/TecnologieDemocratiche/TecnologieDemocratiche)
 
 ## Our website
 
