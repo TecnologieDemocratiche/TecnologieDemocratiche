@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
   validates :accept_real_info, acceptance: {accept: true}
   validates :accept_privacy, acceptance: {accept: true}
   validates :accept_terms, acceptance: {accept: true}
+  validate :valid_tax_code
 
   has_attached_file :payment_recipe
   validates_attachment_content_type :payment_recipe,
@@ -90,6 +91,9 @@ class User < ActiveRecord::Base
 
     def notify_admin
       AdminMailer.new_user_waiting_for_approval(self).deliver_now
+
+    def valid_tax_code
+      errors.add(:tax_code, I18n.t('activerecord.errors.models.user.attributes.tax_code.invalid')) unless CodiceFiscale.valid?(tax_code)
     end
 
     def notify_user
