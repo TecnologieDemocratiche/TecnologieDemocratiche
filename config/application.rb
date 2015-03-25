@@ -39,5 +39,8 @@ module TecnologieDemocratiche
       # Only Authorized Applications
       Doorkeeper::AuthorizedApplicationsController.layout "application"
     end
+
+    config.action_mailer.default_url_options = { host: ENV['TD_HOST'] }
+
   end
 end

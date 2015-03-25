@@ -6,12 +6,14 @@ it:
     sessions:
       new:
         title: "Accedi"
+        become_member: "Diventa Socio di Tecnologie Democratiche!"
+        why_become_member_html: "Con solo 20 € ci aiuterai a migliorare la piattaforma Airesis e ne otterrai l'accesso in <strong>Modalità certificata</strong>!"
   buttons:
     login: "Login"
   payment_type:
-    not_yet: 'Non ancora'
-    paypal: 'Si. Con PayPal'
-    bank_transfer: 'Si. Con Bonifico'
+    not_yet: "Non ancora"
+    paypal: "Si. Con PayPal"
+    bank_transfer: "Si. Con Bonifico"
   activerecord:
     errors:
       models:
@@ -24,3 +26,15 @@ it:
   documents: "Documentazione"
   download_payment_recipe: "Download Payment recipe"
   download_document: "Download document"
+  admin_mailer:
+    new_user_waiting_for_approval:
+      subject: "New User waiting for approval - %{name}"
+      hello: "Hello TD Administrator,"
+      body: "%{name} is a brand new User signed up to Tecnologie Democratiche and is now waiting for your approval."
+      aprove_link: "Approve it now!"
+  user_mailer:
+    account_approved:
+      subject: "Your account has been approved!"
+      hello: "Hello %{name},"
+      body: "Tecnologie Democratiche is glad to inform you that your account has been succesfully approved by our Administrators and you're now ready to log in with your credentials."
+      login_link: "Log in now!"
