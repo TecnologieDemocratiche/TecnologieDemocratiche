@@ -1,0 +1,6 @@
+p
+  =t 'user_mailer.account_approved.hello', name: @user.full_name
+  br
+  =t 'user_mailer.account_approved.body'
+  br
+  =link_to t('user_mailer.account_approved.login_link'), new_user_session_url
