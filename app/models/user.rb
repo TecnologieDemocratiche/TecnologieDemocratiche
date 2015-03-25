@@ -86,7 +86,7 @@ class User < ActiveRecord::Base
   private
 
     def valid_tax_code
-      errors.add(:tax_code, "is not valid") unless CodiceFiscale.valid?(tax_code)
+      errors.add(:tax_code, I18n.t('activerecord.errors.models.user.attributes.tax_code.invalid')) unless CodiceFiscale.valid?(tax_code)
     end
 
 end

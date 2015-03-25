@@ -19,6 +19,8 @@ it:
           attributes:
             email:
               taken: 'Email già registrata'
+            tax_code:
+              invalid: 'Codice Fiscale non valido'
   documents: "Documentazione"
   download_payment_recipe: "Download Payment recipe"
   download_document: "Download document"
