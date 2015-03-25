@@ -4,7 +4,7 @@ h2 = t('.title')
   = f.error_notification
   fieldset
     legend Documentazione
-    = f.input :payment_type, as: :select, collection: User.payment_types.map{|k,v| [t("payment_type.#{k}"),k]}
+    = f.input :payment_type, as: :select, collection: User.payment_types.map { |k, v| [t("payment_type.#{k}"), k] }
     = f.input :payment_recipe
     = f.input :document
   fieldset
@@ -25,7 +25,7 @@ h2 = t('.title')
       .columns.small-6
         = f.input :birthplace
       .columns.small-2
-        = f.input :gender, as: :radio_buttons, collection: ['M','F']
+        = f.input :gender, as: :radio_buttons, collection: ['M', 'F']
     = f.input :tax_code
   fieldset
     legend Residenza

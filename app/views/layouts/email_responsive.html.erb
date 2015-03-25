@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <meta name="viewport" content="width=device-width"/>
-  <%=stylesheet_link_tag 'email_responsive'%>
+  <%= stylesheet_link_tag 'email_responsive' %>
 </head>
 <body>
 <table class="body">
@@ -45,7 +45,7 @@
           <tr>
             <td>
 
-              <%=yield%>
+              <%= yield %>
 
 
               <table class="row footer">
@@ -101,7 +101,7 @@
 
                           <p>Telefono: +39.00000000</p>
 
-                          <p>Email: <%=mail_to 'info@tecnologiedemocratiche.it'%></p>
+                          <p>Email: <%= mail_to 'info@tecnologiedemocratiche.it' %></p>
                         </td>
                         <td class="expander"></td>
                       </tr>
