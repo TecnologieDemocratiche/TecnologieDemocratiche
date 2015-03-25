@@ -1,0 +1,6 @@
+p
+  =t 'admin_mailer.new_user_waiting_for_approval.hello'
+  br
+  =t 'admin_mailer.new_user_waiting_for_approval.body', name: @user.full_name
+  br
+  =link_to t('admin_mailer.new_user_waiting_for_approval.approve_link'), edit_user_url(@user)
