@@ -6,10 +6,12 @@ class User < ActiveRecord::Base
   validates :email, presence: true
   validates :birthdate, presence: true
   validates :birthplace, presence: true
+  validates :birthplace_district, presence: true
   validates :gender, presence: true
   validates :tax_code, presence: true
   validates :address, presence: true
   validates :city, presence: true
+  validates :city_district, presence: true
   validates :zip_code, presence: true
   validates :payment_type, presence: true
   #validates :payment_recipe, presence: true, on: :create
