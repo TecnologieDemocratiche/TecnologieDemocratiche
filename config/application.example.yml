@@ -1,6 +1,13 @@
-ADMIN_EMAIL: ""
-ADMIN_PASSWORD: ""
-TD_EMAIL: ''
+# admin credentials
+ADMIN_EMAIL: "test@tecnologiedemocratiche.it"
+ADMIN_PASSWORD: "mysuperpassword"
+ADMIN_NAME: "Marco"
+ADMIN_LAST_NAME: "Rossi"
+
+# sender of emails
+TD_EMAIL: 'test@tecnologiedemocratiche.it'
+
+
 AWS_BUCKET: ''
 AWS_ACCESS_KEY_ID: ''
 AWS_SECRET_ACCESS_KEY: ''
