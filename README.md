@@ -13,7 +13,7 @@ It allows to register new people and gives them a login in the App which can be 
 
 This app is currently running here:
 
-http://tecnologiedemocratiche.herokuapp.com
+https://tecnologiedemocratiche.herokuapp.com
 
 
 ## Installation
