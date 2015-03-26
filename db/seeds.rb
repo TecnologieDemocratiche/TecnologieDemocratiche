@@ -15,10 +15,10 @@ admin = User.new(
     zip_code: '12345',
     document: File.open('db/fake_document.txt'),
     payment_recipe: File.open('db/fake_payment_recipe.txt'),
-    accept_cookies: 1,
-    accept_real_info: 1,
-    accept_privacy: 1,
-    accept_terms: 1,
+    accept_cookies: true,
+    accept_real_info: true,
+    accept_privacy: true,
+    accept_terms: true,
     admin: true,
     approved: true)
 admin.skip_confirmation!
@@ -43,10 +43,10 @@ if Rails.env.development?
         zip_code: Faker::Address.zip_code,
         document: File.open('db/fake_document.txt'),
         payment_recipe: File.open('db/fake_payment_recipe.txt'),
-        accept_cookies: 1,
-        accept_real_info: 1,
-        accept_privacy: 1,
-        accept_terms: 1,
+        accept_cookies: true,
+        accept_real_info: true,
+        accept_privacy: true,
+        accept_terms: true,
         admin: true,
         approved: true)
     user.skip_confirmation!

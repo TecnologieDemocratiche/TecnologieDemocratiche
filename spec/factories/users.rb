@@ -18,10 +18,10 @@ FactoryGirl.define do
     f.zip_code '12345'
     f.document { File.open('db/fake_document.txt') }
     f.payment_recipe { File.open('db/fake_payment_recipe.txt') }
-    f.accept_cookies 1
-    f.accept_real_info 1
-    f.accept_privacy 1
-    f.accept_terms 1
+    f.accept_cookies true
+    f.accept_real_info true
+    f.accept_privacy true
+    f.accept_terms true
     f.admin false
     f.approved true
   end
