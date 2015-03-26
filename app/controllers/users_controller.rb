@@ -16,11 +16,13 @@ class UsersController < ApplicationController
   end
 
   def new
+    @districts = District.all.invert
     @user.member_since = Date.today
     @user.member_until = Date.today + 1.year
   end
 
   def edit
+    @districts = District.all.invert
   end
 
   def update
