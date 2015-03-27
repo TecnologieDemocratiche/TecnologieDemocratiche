@@ -20,6 +20,9 @@ class User < ActiveRecord::Base
   validates :accept_terms, acceptance: {accept: true}
   validate :valid_tax_code
 
+  belongs_to :approver, class_name: 'User'
+  validate :approvation_fields_consistency
+
   has_attached_file :payment_recipe
   validates_attachment_content_type :payment_recipe,
                                     content_type: ['application/pdf', 'application/msword', 'text/plain', 'image/jpeg', 'image/gif', 'image/png']
@@ -38,6 +41,8 @@ class User < ActiveRecord::Base
   after_commit :notify_admin, on: :create
 
   before_save :notify_user, if: Proc.new { |user| user.approved? && user.approved_changed? }
+
+  before_validation :remove_approver, if: Proc.new { |user| !user.approved? && user.approved_changed? }
 
   def full_name
     "#{name} #{last_name}"
@@ -89,6 +94,11 @@ class User < ActiveRecord::Base
 
   private
 
+  def approvation_fields_consistency
+    errors.add(:approver, I18n.t('activerecord.errors.models.user.attributes.approver.required')) if !approver && approved
+    errors.add(:approved, I18n.t('activerecord.errors.models.user.attributes.approved.required')) if approver && !approved
+  end
+
   def notify_admin
     AdminMailer.new_user_waiting_for_approval(self).deliver_now
   end
@@ -99,5 +109,9 @@ class User < ActiveRecord::Base
 
   def notify_user
     UserMailer.account_approved(self).deliver_now
+  end
+
+  def remove_approver
+    self.approver = nil
   end
 end

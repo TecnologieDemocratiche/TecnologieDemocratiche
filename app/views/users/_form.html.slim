@@ -12,6 +12,7 @@
         .columns.small-6
           = f.input :member_until, as: :string, input_html: {type: :date}
       = f.input :approved
+      = f.hidden_field :approver_id, value: current_user.id unless @user.approved?
     fieldset
       legend Dati personali
       .row

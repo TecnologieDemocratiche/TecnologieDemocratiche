@@ -4,6 +4,8 @@ fieldset
   dl
     dt Account status
     dd =@user.status_label
+    dt Account approver
+    dd = @user.approved? ? @user.approver.full_name : t('.no_approver')
     dt Full name
     dd = @user.full_name
     dt Email

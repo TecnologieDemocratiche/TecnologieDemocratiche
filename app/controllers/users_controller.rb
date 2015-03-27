@@ -24,6 +24,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    flash[:notice] = user_params.to_s
     if @user.update(user_params)
       redirect_to @user
     else
@@ -60,6 +61,6 @@ class UsersController < ApplicationController
                          :name, :last_name, :gender,
                          :birthdate, :birthplace,
                          :address, :city, :zip_code,
-                         :tax_code, :member_since, :member_until)
+                         :tax_code, :member_since, :member_until, :approver_id)
   end
 end
