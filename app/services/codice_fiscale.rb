@@ -18,13 +18,13 @@ class CodiceFiscale
   FORMAT = /#{FORMAT_NO_CHECK_DIGIT}([A-Z])/
 
   # Check digit translation table for odd positions
-  ODD = YAML.load(File.read("app/services/odd_map.yml"))
+  ODD = YAML.load(File.read("config/data/odd_map.yml"))
 
   # Check digit translation table for even positions
-  EVEN = YAML.load(File.read("app/services/even_map.yml"))
+  EVEN = YAML.load(File.read("config/data/even_map.yml"))
 
   # Translation for the month field
-  MONTHS = YAML.load(File.read("app/services/months_map.yml"))
+  MONTHS = YAML.load(File.read("config/data/months_map.yml"))
 
   # Validates a codice fiscale. It checks for format and check-digit correctness
   def self.valid?(str)
