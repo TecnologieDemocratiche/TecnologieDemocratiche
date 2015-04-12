@@ -16,11 +16,13 @@ class UsersController < ApplicationController
   end
 
   def new
+    @districts = District.all.invert
     @user.member_since = Date.today
     @user.member_until = Date.today + 1.year
   end
 
   def edit
+    @districts = District.all.invert
   end
 
   def update
@@ -32,6 +34,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    Rails.logger.debug params.inspect
     if @user.save
       redirect_to @user
     else
@@ -58,8 +61,8 @@ class UsersController < ApplicationController
     params[:user].permit(:email, :password,
                          :approved,
                          :name, :last_name, :gender,
-                         :birthdate, :birthplace,
-                         :address, :city, :zip_code,
+                         :birthdate, :birthplace, :birthplace_district,
+                         :address, :city, :city_district, :zip_code,
                          :tax_code, :member_since, :member_until, :approver_id)
   end
 end

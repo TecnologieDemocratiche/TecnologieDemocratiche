@@ -102,6 +102,7 @@ ActiveRecord::Schema.define(version: 20150326163452) do
     t.string   "birthplace_district"
     t.string   "city_district"
     t.integer  "approver_id"
+
   end
 
   add_index "users", ["approved"], name: "index_users_on_approved", using: :btree

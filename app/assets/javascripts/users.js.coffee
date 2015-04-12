@@ -1,3 +1,12 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$ ->
+
+  setPaymentRecipeVisibility = (duration) ->
+    if $('#user_payment_type').val() == 'not_yet'
+      $('.user_payment_recipe').hide duration
+    else
+      $('.user_payment_recipe').show duration
+    return
+
+  setPaymentRecipeVisibility 0
+  $('#user_payment_type').on 'change', setPaymentRecipeVisibility
+  return

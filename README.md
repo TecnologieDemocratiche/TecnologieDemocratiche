@@ -7,13 +7,13 @@ It allows to register new people and gives them a login in the App which can be 
 
 [![Code Climate](https://codeclimate.com/github/TecnologieDemocratiche/TecnologieDemocratiche/badges/gpa.svg)](https://codeclimate.com/github/TecnologieDemocratiche/TecnologieDemocratiche)
 
-[![Build Status](https://travis-ci.org/TecnologieDemocratiche/TecnologieDemocratiche.svg?branch=feature%2F1239)](https://travis-ci.org/TecnologieDemocratiche/TecnologieDemocratiche)
+[![Code Climate](https://codeclimate.com/repos/5514481de30ba01b2f004c1a/badges/4d540251ccdd0f445180/gpa.svg)](https://codeclimate.com/repos/5514481de30ba01b2f004c1a/feed)
 
 ## Our website
 
 This app is currently running here:
 
-http://tecnologiedemocratiche.herokuapp.com
+https://tecnologiedemocratiche.herokuapp.com
 
 
 ## Installation

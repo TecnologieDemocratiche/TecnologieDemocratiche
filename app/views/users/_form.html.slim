@@ -24,7 +24,11 @@
         .columns.small-4
           = f.input :birthdate, as: :string, input_html: {type: :date}
         .columns.small-6
-          = f.input :birthplace
+          .row
+            .columns.small-8
+              = f.input :birthplace
+            .columns.small-4
+              = f.input :birthplace_district, collection: @districts
         .columns.small-2
           = f.input :gender, as: :radio_buttons, collection: ['M', 'F']
       = f.input :tax_code
@@ -33,9 +37,13 @@
       = f.input :address
       .row
         .columns.small-8
-          = f.input :city
+          .row
+            .columns.small-8
+              = f.input :city
+            .columns.small-4
+              = f.input :zip_code
         .columns.small-4
-          = f.input :zip_code
+          = f.input :city_district, collection: @districts
     fieldset
       legend Documentazione
       .row

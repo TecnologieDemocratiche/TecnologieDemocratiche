@@ -18,25 +18,25 @@ class CodiceFiscale
   FORMAT = /#{FORMAT_NO_CHECK_DIGIT}([A-Z])/
 
   # Check digit translation table for odd positions
-  ODD = YAML.load(File.read("app/services/odd_map.yml"))
+  ODD = YAML.load(File.read("config/data/odd_map.yml"))
 
   # Check digit translation table for even positions
-  EVEN = YAML.load(File.read("app/services/even_map.yml"))
+  EVEN = YAML.load(File.read("config/data/even_map.yml"))
 
   # Translation for the month field
-  MONTHS = YAML.load(File.read("app/services/months_map.yml"))
+  MONTHS = YAML.load(File.read("config/data/months_map.yml"))
 
   # Validates a codice fiscale. It checks for format and check-digit correctness
   def self.valid?(str)
     return false unless str
     str.upcase!
     return false unless str =~ FORMAT
-    return false unless str[-1,1] == self.check_digit(str[0..14],true)
+    return false unless str[-1, 1] == self.check_digit(str[0..14], true)
     true
   end
 
   # Calulates check digit. It raises +ArgumentError+ if the format is not valid.
-  def self.check_digit(str,format_ok=false)
+  def self.check_digit(str, format_ok=false)
     unless format_ok
       self.upcase_match(str, FORMAT_NO_CHECK_DIGIT)
     end
@@ -53,7 +53,7 @@ class CodiceFiscale
   end
 
 
-  def self.upcase_match(str,fmt)
+  def self.upcase_match(str, fmt)
     raise ArgumentError.new("nil input") unless str
     str.upcase!
     raise ArgumentError.new("Input doesn't match with codice fiscale format") unless str =~ fmt

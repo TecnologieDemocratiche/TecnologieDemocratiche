@@ -4,7 +4,7 @@ h2 = t('.title')
   = f.error_notification
   fieldset
     legend Documentazione
-    = f.input :payment_type, as: :select, collection: User.payment_types.map { |k, v| [t("payment_type.#{k}"), k] }
+    = f.input :payment_type, as: :select, collection: User.payment_types.map { |k, v| [t("payment_type.#{k}"), k] }, include_blank: false
     = f.input :payment_recipe
     = f.input :document
   fieldset
@@ -23,7 +23,11 @@ h2 = t('.title')
       .columns.small-4
         = f.input :birthdate, as: :string, input_html: {type: :date}
       .columns.small-6
-        = f.input :birthplace
+        .row
+          .columns.small-8
+            = f.input :birthplace
+          .columns.small-4
+            = f.input :birthplace_district, collection: District.all.invert
       .columns.small-2
         = f.input :gender, as: :radio_buttons, collection: ['M', 'F']
     = f.input :tax_code
@@ -32,10 +36,13 @@ h2 = t('.title')
     = f.input :address
     .row
       .columns.small-8
-        = f.input :city
+        .row
+          .columns.small-8
+            = f.input :city
+          .columns.small-4
+            = f.input :zip_code
       .columns.small-4
-
-        = f.input :zip_code
+        = f.input :city_district, collection: District.all.invert
   fieldset
     legend Corrette informazioni
     .panel
