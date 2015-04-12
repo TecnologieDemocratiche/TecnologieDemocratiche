@@ -1,5 +1,9 @@
 require 'rails_helper'
 
+Capybara.configure do |config|
+  config.match = :prefer_exact
+end
+
 describe "registration process", type: :feature do
   it "can register correctly" do
     visit new_user_registration_path
@@ -12,10 +16,12 @@ describe "registration process", type: :feature do
     fill_in I18n.t('simple_form.labels.user.last_name'), with: Faker::Name.last_name
     fill_in I18n.t('simple_form.labels.user.birthdate'), with: Date.today
     fill_in I18n.t('simple_form.labels.user.birthplace'), with: Faker::Address.city
+    fill_in I18n.t('simple_form.labels.user.birthplace_district'), with: Faker::Address.city
     choose 'M'
     fill_in I18n.t('simple_form.labels.user.tax_code'), with: 'RDOLSN86M19D704W'
     fill_in I18n.t('simple_form.labels.user.address'), with: Faker::Address.street_address
     fill_in I18n.t('simple_form.labels.user.city'), with: Faker::Address.city
+    fill_in I18n.t('simple_form.labels.user.city_district'), with: Faker::Address.city
     fill_in I18n.t('simple_form.labels.user.zip_code'), with: Faker::Address.zip_code
     find(:css, '#user_accept_real_info').set(true)
     find(:css, '#user_accept_cookies').set(true)
