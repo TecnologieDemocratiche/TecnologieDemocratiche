@@ -24,11 +24,13 @@ it:
         name: Nome
         last_name: Cognome
         birthdate: Data di nascita
-        birthplace: Luogo di nascita
+        birthplace: Comune di nascita
+        birthplace_district: Provincia di nascita
         gender: Sesso
         tax_code: Codice Fiscale
         address: Indirizzo
         city: Comune
+        city_district: Provincia
         zip_code: CAP
         payment_type: Hai già provveduto al pagamento della quota di iscrizione?
         payment_recipe: Ricevuta di pagamento quota associativa

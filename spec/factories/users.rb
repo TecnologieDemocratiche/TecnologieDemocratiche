@@ -11,10 +11,12 @@ FactoryGirl.define do
     f.member_until { Date.today + 10.years }
     f.payment_type :not_yet
     f.birthdate { Date.today }
-    f.birthplace 'Birthplace'
+    f.birthplace { Faker::Address.city }
+    f.birthplace_district { Faker::Address.city }
     f.tax_code 'NGLLNZ92R30C357W'
-    f.address 'Address'
-    f.city 'City'
+    f.address { Faker::Address.street_address }
+    f.city { Faker::Address.city }
+    f.city_district { Faker::Address.city }
     f.zip_code '12345'
     f.document { File.open('db/fake_document.txt') }
     f.payment_recipe { File.open('db/fake_payment_recipe.txt') }
