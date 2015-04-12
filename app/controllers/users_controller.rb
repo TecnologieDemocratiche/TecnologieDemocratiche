@@ -34,6 +34,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    Rails.logger.debug params.inspect
     if @user.save
       redirect_to @user
     else
