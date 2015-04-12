@@ -20,9 +20,13 @@ it:
         user:
           attributes:
             email:
-              taken: 'Email già registrata'
+              taken: "Email già registrata"
             tax_code:
-              invalid: 'Codice Fiscale non valido'
+              invalid: "Codice Fiscale non valido"
+            approved:
+              required: "Approved required if setting approver"
+            approver:
+              required: "Approver required if setting approved"
   documents: "Documentazione"
   download_payment_recipe: "Download Payment recipe"
   download_document: "Download document"
@@ -38,3 +42,10 @@ it:
       hello: "Hello %{name},"
       body: "Tecnologie Democratiche is glad to inform you that your account has been succesfully approved by our Administrators and you're now ready to log in with your credentials."
       login_link: "Log in now!"
+  users:
+    show:
+      no_approver: "ND"
+      
+      
+      
+      

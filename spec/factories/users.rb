@@ -25,6 +25,6 @@ FactoryGirl.define do
     f.accept_privacy true
     f.accept_terms true
     f.admin false
-    f.approved true
+    f.approved false
   end
 end

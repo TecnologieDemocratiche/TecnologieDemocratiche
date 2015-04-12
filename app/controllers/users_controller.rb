@@ -63,6 +63,6 @@ class UsersController < ApplicationController
                          :name, :last_name, :gender,
                          :birthdate, :birthplace, :birthplace_district,
                          :address, :city, :city_district, :zip_code,
-                         :tax_code, :member_since, :member_until)
+                         :tax_code, :member_since, :member_until, :approver_id)
   end
 end

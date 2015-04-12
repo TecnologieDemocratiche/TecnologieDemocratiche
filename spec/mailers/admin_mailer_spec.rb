@@ -12,7 +12,7 @@ describe AdminMailer do
     @admin.save!
     @admin.confirm!
 
-    @user = FactoryGirl.create(:user, approved: false)
+    @user = FactoryGirl.create(:user)
     ActionMailer::Base.deliveries.clear
 
     # manually calling callback since we are in test environment

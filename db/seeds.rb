@@ -22,10 +22,11 @@ admin = User.new(
     accept_privacy: true,
     accept_terms: true,
     admin: true,
-    approved: true)
+    approved: false)
 admin.skip_confirmation!
 admin.save!
 admin.confirm!
+admin.update!(approved: true, approver: admin)
 if Rails.env.development?
   10.times do
     user = User.new(
@@ -52,7 +53,8 @@ if Rails.env.development?
         accept_privacy: true,
         accept_terms: true,
         admin: true,
-        approved: true)
+        approved: true,
+        approver: admin)
     user.skip_confirmation!
     user.save!
     user.confirm!
