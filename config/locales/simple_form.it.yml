@@ -31,7 +31,7 @@ it:
         city: Comune
         zip_code: CAP
         payment_type: Hai già provveduto al pagamento della quota di iscrizione?
-        payment_recipe: Ricevuta di pagamento quota associativa (se hai gia' effettuato il pagamento, non obbligatoria)
+        payment_recipe: Ricevuta di pagamento quota associativa
         document: Documento d'identità valido (fronte e retro)
         accept_real_info: Lo dichiaro
         accept_privacy: Accetto
