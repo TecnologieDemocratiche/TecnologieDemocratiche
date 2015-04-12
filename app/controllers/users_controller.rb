@@ -60,8 +60,8 @@ class UsersController < ApplicationController
     params[:user].permit(:email, :password,
                          :approved,
                          :name, :last_name, :gender,
-                         :birthdate, :birthplace,
-                         :address, :city, :zip_code,
+                         :birthdate, :birthplace, :birthplace_district,
+                         :address, :city, :city_district, :zip_code,
                          :tax_code, :member_since, :member_until)
   end
 end

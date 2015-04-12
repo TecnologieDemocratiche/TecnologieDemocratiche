@@ -38,7 +38,7 @@ if Rails.env.development?
         member_until: Date.today + 10.years,
         payment_type: :not_yet,
         birthdate: Date.today,
-        birthplace: Faker::Address.country,
+        birthplace: Faker::Address.city,
         birthplace_district: 'Birthplace District',
         tax_code: 'NGLLNZ92R30C357W',
         address: Faker::Address.street_address,
