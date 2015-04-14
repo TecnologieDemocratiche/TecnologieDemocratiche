@@ -35,7 +35,7 @@ describe UserMailer do
     end
 
     it 'sets the correct subject' do
-      expect(@sent_email.subject).to eq( "Your account has been approved!" )
+      expect(@sent_email.subject).to eq( I18n.t('user_mailer.account_approved.subject') )
     end
 
     it 'sets the correct sender' do  
