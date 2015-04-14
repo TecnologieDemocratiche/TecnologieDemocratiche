@@ -94,6 +94,23 @@ class User < ActiveRecord::Base
     }
   end
 
+  #TODO: I18n
+  def feasible_invalid_tax_code?
+    calculated_tax_code != tax_code.upcase
+  rescue ArgumentError
+    true
+  end
+
+  #TODO: I18n
+  def calculated_tax_code
+    CodiceFiscaleTools.calculate( name: name,
+                                  surname: last_name,
+                                  gender: {'M' => :male, 'F' => :female }[gender],
+                                  birthdate: birthdate,
+                                  province_code: birthplace_district,
+                                  city_name: birthplace )
+  end
+
   private
 
   def approvation_fields_consistency
@@ -106,7 +123,7 @@ class User < ActiveRecord::Base
   end
 
   def valid_tax_code
-    errors.add(:tax_code, I18n.t('activerecord.errors.models.user.attributes.tax_code.invalid')) unless CodiceFiscale.valid?(tax_code)
+    errors.add(:tax_code, I18n.t('activerecord.errors.models.user.attributes.tax_code.invalid')) unless CodiceFiscaleTools.valid?(tax_code)
   end
 
   def notify_user

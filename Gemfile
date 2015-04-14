@@ -31,6 +31,7 @@ gem 'premailer'
 gem 'nokogiri'
 gem 'premailer-rails'
 gem 'faker'
+gem 'codice-fiscale', git: 'https://github.com/topac/codice_fiscale.git'
 
 group :development do
   gem 'better_errors'

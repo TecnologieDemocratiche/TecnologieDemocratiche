@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/topac/codice_fiscale.git
+  revision: 335ca03e250e6b88ac197d1ede7b4c7fc034491b
+  specs:
+    codice-fiscale (0.0.8)
+      activemodel
+      activesupport
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -293,6 +301,7 @@ DEPENDENCIES
   capybara
   capybara-screenshot
   capybara-webkit
+  codice-fiscale!
   coffee-rails
   database_cleaner
   devise

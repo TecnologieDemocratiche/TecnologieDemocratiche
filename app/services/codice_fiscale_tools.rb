@@ -1,7 +1,8 @@
 require 'date'
+require 'codice_fiscale'
 
 # This class stores the procedures needed to handle the format of italian codice fiscale
-class CodiceFiscale
+class CodiceFiscaleTools
 
   # Regex for validation. It validates the code without the check-digit.
   # It also separates the sections with appropriate grouping. Example:
@@ -58,5 +59,9 @@ class CodiceFiscale
     str.upcase!
     raise ArgumentError.new("Input doesn't match with codice fiscale format") unless str =~ fmt
     $~
+  end
+
+  def self.calculate params
+    CodiceFiscale.calculate params
   end
 end
