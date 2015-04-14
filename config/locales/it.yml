@@ -2,7 +2,7 @@ it:
   devise:
     registrations:
       new:
-        title: "Crea il tuo account"
+        title: "Iscrizione all'Associazione"
     sessions:
       new:
         title: "Accedi"
@@ -28,20 +28,20 @@ it:
             approver:
               required: "Approver required if setting approved"
   documents: "Documentazione"
-  download_payment_recipe: "Download Payment recipe"
-  download_document: "Download document"
+  download_payment_recipe: "Download ricevuta di pagamento"
+  download_document: "Download documento i identità"
   admin_mailer:
     new_user_waiting_for_approval:
-      subject: "New User waiting for approval - %{name}"
-      hello: "Hello TD Administrator,"
-      body: "%{name} is a brand new User signed up to Tecnologie Democratiche and is now waiting for your approval."
-      aprove_link: "Approve it now!"
+      subject: "Un nuovo utente si è iscritto all'Associazione - %{name}"
+      hello: "Salve Amministratore di Tecnologie Democratiche,"
+      body: "%{name} è un'utente che si è appena iscritto all'Associazione ed è in attesa della tua approvazione."
+      aprove_link: "Approvalo Subito!"
   user_mailer:
     account_approved:
-      subject: "Your account has been approved!"
-      hello: "Hello %{name},"
-      body: "Tecnologie Democratiche is glad to inform you that your account has been succesfully approved by our Administrators and you're now ready to log in with your credentials."
-      login_link: "Log in now!"
+      subject: "Il tuo Account è stato correttamente approvato!"
+      hello: "Salve %{name},"
+      body: "Tecnologie Democratiche è lieta di informarla che il suo account è stato approvato dai nostri amministratori e adesso può effettuare il Log in."
+      login_link: "Efettua Log in!"
   users:
     show:
       no_approver: "ND"
