@@ -21,7 +21,7 @@ it:
         password: 'Password'
         password_confirmation: 'Conferma Password'
       user:
-        name: Nome
+        name: Nome completo (come appare in carta d'identità)
         last_name: Cognome
         birthdate: Data di nascita
         birthplace: Comune di nascita
