@@ -1,8 +1,21 @@
 it:
   devise:
+    confirmations:
+      new:
+        title: "Non hai ricevuto le istruzioni per confermare il tuo account?"
+        resend_instruction_link: "Inviami di nuovo le istruzioni per la conferma"
     registrations:
       new:
         title: "Iscrizione all'Associazione"
+    passwords:
+      new:
+        title: "Password dimenticata?"
+        submit: "Inviami le istruzioni per il reset della password"
+      edit:
+        title: "Cambia la tua Password"
+        new_password: "Nuova password"
+        confirm_password: "Conferma la tua nuova password"
+        change_password_link: "Cambia la mia password"
     sessions:
       new:
         title: "Accedi"
@@ -10,6 +23,14 @@ it:
         why_become_member_html: "Con solo 20 € ci aiuterai a migliorare la piattaforma Airesis e ne otterrai l'accesso in <strong>Modalità certificata</strong>!"
   buttons:
     login: "Login"
+    logout: "Logout"
+    sign_up: "Registrati"
+    forgot_password: "Password dimenticata?"
+    confirmation_instructions: "Non hai ricevuto le istruzioni per la conferma?"
+    unlock_instructions: "Non hai ricevuto le istruzioni per lo sblocco?"
+    sign_in_with: "Login tramite %{provider}"
+    edit_users: "Modifica utenti"
+    manage_apps: "Gestisci applicazioni"
   payment_type:
     not_yet: "Non ancora"
     paypal: "Si. Con PayPal"
@@ -30,6 +51,16 @@ it:
   documents: "Documentazione"
   download_payment_recipe: "Download ricevuta di pagamento"
   download_document: "Download documento i identità"
+  layouts:
+    application:
+      title: "Tecnologie Democratiche"
+      my_page: "Account"
+      actions: "Azioni"
+  welcome:
+    show:
+      welcome: "Benvenuto %{who}"
+      valuable_member: "Sei un membro molto importante di questa associazione"
+      wow_admin: "Wow! Sei un Amministratore!"
   admin_mailer:
     new_user_waiting_for_approval:
       subject: "Un nuovo utente si è iscritto all'Associazione - %{name}"
@@ -46,9 +77,31 @@ it:
       body: "Tecnologie Democratiche è lieta di informarla che il suo account è stato approvato dai nostri amministratori e adesso può effettuare il Log in."
       login_link: "Efettua Log in!"
   users:
+    new:
+      title: "Nuovo utente"
+    edit:
+      title: "Modifica utente"
+    index:
+      title: "Elenco utenti"
+      all_users: "Tutti gli utenti"
+      users_waiting_approval: "Utenti in attesa di approvazione"
+      table_labels:
+        email: "Email"
+        full_name: "Nome completo"
+        status: "Stato"
+        actions: "Azioni"
+      action_links:
+        show: "Mostra"
+        edit: "Modifica"
+        destroy: "Elimina"
+        new: "Nuovo Utente"
     show:
       no_approver: "ND"
-      
-      
-      
-      
+      labels:
+        account_status: "Stato account"
+        account_approver: "Certificatore account"
+        full_name: "Nome completo"
+        email: "Email"
+        birthdate: "Data di nascita"
+        member_since: "Membro dal"
+        member_until: "Membro fino al"
