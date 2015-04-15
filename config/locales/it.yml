@@ -36,6 +36,9 @@ it:
       hello: "Salve Amministratore di Tecnologie Democratiche,"
       body: "%{name} è un'utente che si è appena iscritto all'Associazione ed è in attesa della tua approvazione."
       aprove_link: "Approvalo Subito!"
+      feasible_invalid_tax_code: "Attenzione! il codice fiscale dell'utente potrebbe non essere corretto. E' necessario effettuare un controllo piu' approfondito sul sito dell'Agenzia delle Entrate."
+      validate_tax_code_link: "Verifica Codice Fiscale"
+      validate_tax_code_href: "https://telematici.agenziaentrate.gov.it/VerificaCF/Scegli.do?parameter=verificaCfPf"
   user_mailer:
     account_approved:
       subject: "Il tuo Account è stato correttamente approvato!"

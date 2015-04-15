@@ -7,6 +7,7 @@ FactoryGirl.define do
     f.password_confirmation 'mickeymouse'
     f.name { Faker::Name.first_name }
     f.last_name { Faker::Name.last_name }
+    f.gender { ['M', 'F'].sample }
     f.member_since { Date.today }
     f.member_until { Date.today + 10.years }
     f.payment_type :not_yet
