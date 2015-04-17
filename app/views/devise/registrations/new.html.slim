@@ -3,17 +3,17 @@ h2 = t('.title')
 = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = f.error_notification
   fieldset
-    legend Documentazione
+    legend = t('legends.documentation')
     = f.input :payment_type, as: :select, collection: User.payment_types.map { |k, v| [t("payment_type.#{k}"), k] }, include_blank: false
     = f.input :payment_recipe
     = f.input :document
   fieldset
-    legend Dati Account
+    legend = t('legends.account_data')
     = f.input :email, autofocus: true
     = f.input :password, required: true
     = f.input :password_confirmation, required: true
   fieldset
-    legend Dati personali
+    legend = t('legends.personal_data')
     .row
       .columns.small-6
         = f.input :name
@@ -32,7 +32,7 @@ h2 = t('.title')
         = f.input :gender, as: :radio_buttons, collection: ['M', 'F']
     = f.input :tax_code
   fieldset
-    legend Residenza
+    legend = t('legends.residency')
     = f.input :address
     .row
       .columns.small-8
@@ -44,42 +44,28 @@ h2 = t('.title')
       .columns.small-4
         = f.input :city_district, collection: District.all.invert
   fieldset
-    legend Corrette informazioni
+    legend = t('legends.correct_infos')
     .panel
-      .text-center
-        | Il/La sottoscritto/a Consapevole
-      ul
-        li
-          | delle responsabilità e delle sanzioni penali previste dall’art. 76 del DPR 445/2000 per le false attestazioni e dichiarazioni mendaci;
-        li
-          | della perdita dei benefici conseguenti al provvedimento emanato sulla base di dichiarazioni non veritiere, ai sensi dell’art. 75 del citato DPR;
-        li
-          |dell'effettuazione di controlli sulla veridicità di quanto dichiarato, ai sensi dell'art. 71 del citato DPR;
-      .text-center
-        | Sotto la propria responsabilità
-        br
-        | DICHIARA
-        br
-        | Che le generalità indicate in fase di registrazione sono complete, corrette e veritiere
+      = render t('.text_partials.correct_infos_text')
     = f.input :accept_real_info, as: :boolean
   fieldset
-    legend Privacy
-    = render 'layouts/shared/privacy'
+    legend = t('legends.privacy')
+    = render t('.text_partials.privacy')
     .panel
       .scrollable
-        = render 'layouts/shared/privacy_text'
+        = render t('.text_partials.privacy_text')
     = f.input :accept_privacy, as: :boolean
   fieldset
-    legend Condizioni d'uso del sito
+    legend = t('legends.terms')
     .panel
       .scrollable
-        = render 'layouts/shared/terms_text'
+        = render t('.text_partials.terms_text')
     = f.input :accept_terms, as: :boolean
   fieldset
-    legend Cookies
+    legend = t('legends.cookies')
     .panel
       .scrollable
-        = render 'layouts/shared/cookies_text'
+        = render t('.text_partials.cookies_text')
     = f.input :accept_cookies, as: :boolean
   .form-actions
     = f.submit class: 'button'

@@ -7,6 +7,12 @@ it:
     registrations:
       new:
         title: "Iscrizione all'Associazione"
+        text_partials:
+          correct_infos_text: "layouts/shared/it/correct_infos_text"
+          privacy: "layouts/shared/it/privacy"
+          privacy_text: "layouts/shared/it/privacy_text"
+          cookies_text: "layouts/shared/it/cookies_text"
+          terms_text: "layouts/shared/it/terms_text"
     passwords:
       new:
         title: "Password dimenticata?"
