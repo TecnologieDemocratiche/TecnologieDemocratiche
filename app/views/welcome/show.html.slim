@@ -1,14 +1,11 @@
-h1
-  ' Welcome
-  =current_user.email
-p
-  ' You are really a valuable member of that association
+h1 = t('.welcome', who: current_user.email)
+p = t('.valuable_member')
 
 -if current_user.admin?
   p
-    ' Wow! You are an admin! Please
+    = t('.wow_admin')
     ul
       li
-        =link_to 'edit users', users_path
+        = link_to t('buttons.edit_users'), users_path
       li
-        =link_to 'manage apps', '/oauth/applications'
+        = link_to t('buttons.manage_apps'), '/oauth/applications'

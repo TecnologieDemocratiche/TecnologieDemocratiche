@@ -2,7 +2,7 @@
   = f.error_notification
   .form-inputs
     fieldset
-      legend Dati Account
+      legend = t('legends.account_data')
       = f.input :email
       -if @user.new_record?
         = f.input :password
@@ -14,7 +14,7 @@
       = f.input :approved
       = f.hidden_field :approver_id, value: current_user.id unless @user.approved?
     fieldset
-      legend Dati personali
+      legend = t('legends.personal_data')
       .row
         .columns.small-6
           = f.input :name
@@ -33,7 +33,7 @@
           = f.input :gender, as: :radio_buttons, collection: ['M', 'F']
       = f.input :tax_code
     fieldset
-      legend Residenza
+      legend = t('legends.residency')
       = f.input :address
       .row
         .columns.small-8
@@ -45,7 +45,7 @@
         .columns.small-4
           = f.input :city_district, collection: @districts
     fieldset
-      legend Documentazione
+      legend = t('legends.documentation')
       .row
         .columns.small-6
           = f.input :payment_recipe

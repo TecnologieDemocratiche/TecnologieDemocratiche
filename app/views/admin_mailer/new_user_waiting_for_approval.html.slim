@@ -1,10 +1,10 @@
 p
-  =t 'admin_mailer.new_user_waiting_for_approval.hello'
+  = t '.hello'
   br
-  =t 'admin_mailer.new_user_waiting_for_approval.body', name: @user.full_name
+  = t '.body', name: @user.full_name
   br
-  =link_to t('admin_mailer.new_user_waiting_for_approval.approve_link'), edit_user_url(@user)
+  = link_to t('.approve_link'), edit_user_url(@user)
   - if @user.feasible_invalid_tax_code?
     .alert
-      =t 'admin_mailer.new_user_waiting_for_approval.feasible_invalid_tax_code'
-      =link_to t('admin_mailer.new_user_waiting_for_approval.validate_tax_code_link'), t('admin_mailer.new_user_waiting_for_approval.validate_tax_code_href')
+      = t '.feasible_invalid_tax_code'
+      = link_to t('.validate_tax_code_link'), t('.validate_tax_code_href')

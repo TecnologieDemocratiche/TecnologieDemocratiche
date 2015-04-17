@@ -1,4 +1,13 @@
 it:
+  legends:
+    account_data: "Dati Account"
+    personal_data: "Dati personali"
+    residency: "Residenza"
+    documentation: "Documentazione"
+    correct_infos: "Corrette informazioni"
+    privacy: "Privacy"
+    terms: "Condizioni d'uso del sito"
+    cookies: "Cookies"
   helpers:
     submit:
       user:

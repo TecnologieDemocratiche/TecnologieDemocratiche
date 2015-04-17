@@ -3,7 +3,7 @@ html lang="en"
   head
     meta charset="utf-8" /
     meta content="width=device-width, initial-scale=1.0" name="viewport" /
-    title= content_for?(:title) ? yield(:title) : "Tecnologie Democratiche"
+    title= content_for?(:title) ? yield(:title) : t('.title')
     = stylesheet_link_tag "application"
     = javascript_include_tag "vendor/modernizr"
     = javascript_include_tag "application"
@@ -13,7 +13,7 @@ html lang="en"
       ul.title-area
         li.name
           h1
-            =link_to 'Tecnologie Democratiche', root_path
+            =link_to t('.title'), root_path
         li.toggle-topbar.menu-icon
           =link_to root_path do
             span Menu
@@ -21,12 +21,12 @@ html lang="en"
         ul.right
           -if signed_in?
             li.active
-              =link_to 'My Page', current_user
+              =link_to t('.my_page'), current_user
             li.has-dropdown
-              a href="#"  Actions
+              a href="#"  = t('.actions')
               ul.dropdown
                 li
-                  =link_to 'Logout', destroy_user_session_path, method: :delete
+                  =link_to t('buttons.logout'), destroy_user_session_path, method: :delete
     .row
       =render 'layouts/shared/messages'
       = yield

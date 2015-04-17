@@ -1,30 +1,31 @@
-h1 =@user.full_name
+h1 = @user.full_name
 
 fieldset
   dl
-    dt Account status
-    dd =@user.status_label
-    dt Account approver
+    dt = t('.labels.account_status')
+    dd = @user.status_label
+    dt = t('.labels.account_approver')
     dd = @user.approved? ? @user.approver.full_name : t('.no_approver')
-    dt Full name
+    dt = t('.labels.full_name')
     dd = @user.full_name
-    dt Email
+    dt = t('.labels.email')
     dd = @user.email
-    dt Birthdate
+    dt = t('.labels.birthdate')
     dd = @user.birthdate
-    dt Member since
+    dt = t('.labels.member_since')
     dd = @user.member_since
-    dt Member until
+    dt = t('.labels.member_until')
     dd = @user.member_until
 fieldset
   legend = t('documents')
-  .row
-    .columns.small-6
-      = link_to t('download_payment_recipe'), download_payment_recipe_user_path(@user), target: :_blank
+  - if @user.payment_recipe.exists?
+    .row
+      .columns.small-6
+        = link_to t('download_payment_recipe'), download_payment_recipe_user_path(@user), target: :_blank
   .row
     .columns.small-6
       = link_to t('download_document'), download_document_user_path(@user), target: :_blank
 
-=link_to 'Edit', edit_user_path(@user), class: 'button primary' if can? :edit, @user
-=link_to 'List users', users_path, class: 'button' if can? :index, User
+= link_to 'Edit', edit_user_path(@user), class: 'button primary' if can? :edit, @user
+= link_to 'List users', users_path, class: 'button' if can? :index, User
 

@@ -1,18 +1,18 @@
-h1 Users list
+h1 = t('.title')
 
-= link_to "All Users", users_path, class: 'button'
+= link_to t('.all_users'), users_path, class: 'button'
 |
-= link_to "Users waiting approval", users_path(status: :waiting_for_approval), class: 'button'
+= link_to t('.users_waiting_approval'), users_path(status: :waiting_for_approval), class: 'button'
 
 
 = will_paginate @users, renderer: FoundationPagination::Rails
 table
   thead
     tr
-      th Email
-      th Full name
-      th Status
-      th Actions
+      th = t('.table_labels.email')
+      th = t('.table_labels.full_name')
+      th = t('.table_labels.status')
+      th = t('.table_labels.actions')
   tbody
     - @users.each do |user|
       tr
@@ -20,9 +20,9 @@ table
         td = user.full_name
         td = user.status_label
         td
-          = link_to 'show', user, class: 'button success'
-          = link_to 'edit', edit_user_path(user), class: 'button'
-          = link_to 'destroy', user, method: :delete, class: 'button alert'
+          = link_to t('.action_links.show'), user, class: 'button success'
+          = link_to t('.action_links.edit'), edit_user_path(user), class: 'button'
+          = link_to t('.action_links.destroy'), user, method: :delete, class: 'button alert'
 = will_paginate @users, renderer: FoundationPagination::Rails
 
-=link_to 'New user', new_user_path, class: 'button primary'
+= link_to t('.action_links.new'), new_user_path, class: 'button primary'
