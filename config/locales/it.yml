@@ -19,6 +19,19 @@ it:
                                  <p> In caso di problemi un nostro incaricato provvederà a contattarti. </p>
                                  <p class='lead'> Grazie per esserti registrato! </p>
                                  <p> Il presidente di Tecnologie Democratiche, <br> Marino Tilatti </p>"
+      reset_password_instructions:
+        hello: "Ciao, %{name}"
+        change_request: "Qualcuno ha richiesto il link per il cambio password del tuo account. E' possibile effettuare l'operazione attraverso il link sottostante."
+        change_link: "Cambia password"
+        copy_url: "Oppure copia il seguente testo nella barra degli indirizzi del programma con cui navighi su internet:"
+        ignore_if_not_requested: "Se non hai richiesto quest'operazione, per favore ignora questo messaggio"
+        additional_info: "La tua password non verrà modificata fino al momento in cui visiterai il link sopra e ne imposterai una nuova."
+      unlock_instructions:
+        hello: "Ciao, %{name}"
+        locked_account: "Il tuo account è stato bloccato a causa di un'eccessivo numero di tentativi di accesso non corretti"
+        unlock_account: "Clicca il link sottostante per sbloccare il tuo account:"
+        unlock_account_link: "Sblocca il mio account"
+        copy_url: "Oppure copia il seguente testo nella barra degli indirizzi del programma con cui navighi su internet:"
     confirmations:
       new:
         title: "Non hai ricevuto le istruzioni per confermare il tuo account?"

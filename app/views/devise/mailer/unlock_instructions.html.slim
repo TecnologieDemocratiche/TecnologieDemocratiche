@@ -1,0 +1,19 @@
+table.row
+  tr
+    td.wrapper.last
+      table.twelve.columns
+        tr
+          td.panel
+            h1
+              = t('.hello', name: @resource.full_name)
+            p
+              strong
+                = t('.account_locked')
+            p
+              = t('.unlock_account')
+            p
+              = link_to t('.unlock_account_link'), unlock_url(@resource, unlock_token: @token)
+            p
+              = t('.copy_url')
+            p
+              = unlock_url(@resource, unlock_token: @token)
