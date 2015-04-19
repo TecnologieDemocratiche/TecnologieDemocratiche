@@ -47,25 +47,25 @@ h2 = t('.title')
     legend = t('legends.correct_infos')
     .panel
       = render t('.text_partials.correct_infos_text')
-    = f.input :accept_real_info, as: :boolean
+    = f.input :accept_real_info, required: true
   fieldset
     legend = t('legends.privacy')
     = render t('.text_partials.privacy')
     .panel
       .scrollable
         = render t('.text_partials.privacy_text')
-    = f.input :accept_privacy, as: :boolean
+    = f.input :accept_privacy, required: true
   fieldset
     legend = t('legends.terms')
     .panel
       .scrollable
         = render t('.text_partials.terms_text')
-    = f.input :accept_terms, as: :boolean
+    = f.input :accept_terms, required: true
   fieldset
     legend = t('legends.cookies')
     .panel
       .scrollable
         = render t('.text_partials.cookies_text')
-    = f.input :accept_cookies, as: :boolean
+    = f.input :accept_cookies, required: true
   .form-actions
     = f.submit class: 'button'
