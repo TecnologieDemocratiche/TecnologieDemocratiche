@@ -5,13 +5,12 @@ table.row
         tr
           td
             h1
-              = "Ciao, #{@resource.full_name}"
+              = t('.hello', name: @resource.full_name)
 
             p.lead
-              ' Grazie per esserti registrato a Tecnologie Democratiche!
+              = t('.thank_you')
             p
-              ' Hai appena fatto il primo passo per ottenere un account certificato.
-              ' Leggi attentamente questa email per concludere la procedura.
+              = t('.certified_account')
           td.expander
 table.row.callout
   tr
@@ -21,9 +20,12 @@ table.row.callout
           td.panel
             p
               strong
-                ' Conferma l'indirizzo email fornito cliccando qui:
+                = t('.confirm_email')
             p
-              = link_to 'Conferma indirizzo email', confirmation_url(@resource, confirmation_token: @token)
+              = link_to t('.confirm_email_link'), confirmation_url(@resource, confirmation_token: @token)
+            p
+              strong
+                = t('.copy_url')
             p
               = confirmation_url(@resource, confirmation_token: @token)
           td.expander
@@ -35,41 +37,21 @@ table.row.callout
           td.panel
             p
               strong
-                ' Non hai ancora effettuato il pagamento?
+                = t('.not_payed_yet?')
             p
-              ' Versa la quota associativa annuale di 20€ nel modo che preferisci:
+              = t('.choose_payment_method')
             p
               strong
-                ' Iscrizione rapida
-              ' cliccando sul pulsante PayPal qui sotto:
+                = t('.paypal_payment')
             p
               ' PULSANTE
             p
-              ' oppure tramite
-              strong
-                ' bonifico
-              ' su conto corrente
+              = t('.bank_payment')
             p
-              ' IBAN: IT76L0316501600000011758905
-              br
-              ' BIC/SWIFT: IWBKITMM
-              br
-              ' Banca: IW BANK
-              br
-              ' Intestato a: Tecnologie Democratiche
-          td.expander
-table.row.callout
-  tr
-    td.wrapper.last
-      table.twelve.columns
-        tr
-          td.panel
+              = t('.bank_details_html')
             p
               strong
-                ' Inviaci la ricevuta di pagamento
-            p
-              ' Tramite email a info@tecnologiedemocratiche.it, usando l'indirizzo
-              = @resource.email
+                = t('.send_payment_recipe', email: @resource.email)
           td.expander
 table.row
   tr
@@ -77,15 +59,4 @@ table.row
       table.twelve.columns
         tr
           td
-            p
-              ' Impiegheremo dai tre ai sette giorni per concludere la procedura di verifica e attivazione account.
-            p
-              ' Quando il tuo account sarà attivo riceverai una conferma a questo indirizzo email.
-            p
-              ' In caso di problemi un nostro incaricato provvederà a contattarti.
-            p.lead
-              ' Grazie per esserti registrato!
-            p
-              ' Il presidente di Tecnologie Democratiche,
-              br
-              ' Bohhhhhh
+            = t('.closing_paragraph')

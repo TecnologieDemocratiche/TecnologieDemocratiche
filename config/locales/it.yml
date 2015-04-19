@@ -1,5 +1,24 @@
 it:
   devise:
+    mailer:
+      confirmation_instructions:
+        hello: "Ciao, %{name}"
+        thank_you: "Grazie per esserti iscritto a Tecnologie Democratiche!"
+        certified_account: "Hai inoltre compiuto il primo passo per ottenere un account certificato. Leggi attentamente questa email per concludere la procedura."
+        confirm_email: "Conferma l'indirizzo email fornito cliccando qui:"
+        confirm_email_link: "Conferma indirizzo email"
+        copy_url: "Oppure copia il seguente testo nella barra degli indirizzi del programma con cui navighi su internet:"
+        not_payed_yet?: "Non hai ancora effettuato il pagamento?"
+        choose_payment_method: "Versa la quota associativa annuale di 20€ nel modo che preferisci:"
+        paypal_payment: "Iscrizione rapida cliccando sul pulsante PayPal qui sotto:"
+        bank_payment: "oppure tramite bonifico su conto corrente"
+        bank_details_html: "IBAN: IT76L0316501600000011758905 <br> BIC/SWIFT: IWBKITMM <br> Banca: IW BANK <br> Intestato a: Tecnologie Democratiche"
+        send_payment_recipe: "Inviaci la ricevuta di pagamento tramite email a info@tecnologiedemocratiche.it, usando l'indirizzo %{email}"
+        closing_paragraph_html: "<p> Impiegheremo dai tre ai sette giorni per concludere la procedura di verifica e attivazione account. </p>
+                                 <p> Quando il tuo account sarà attivo riceverai una conferma a questo indirizzo email. </p>
+                                 <p> In caso di problemi un nostro incaricato provvederà a contattarti. </p>
+                                 <p class='lead'> Grazie per esserti registrato! </p>
+                                 <p> Il presidente di Tecnologie Democratiche, <br> Marino Tilatti </p>"
     confirmations:
       new:
         title: "Non hai ricevuto le istruzioni per confermare il tuo account?"
