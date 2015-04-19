@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   validates :name, presence: true
   validates :last_name, presence: true
   validates :email, presence: true
-  validates_format_of :email, with: /.+@.+\..+/i
+  validates_format_of :email, with: /\A.+@.+\..+\z/i
   validates :birthdate, presence: true
   validates :birthplace, presence: true
   validates :birthplace_district, presence: true
