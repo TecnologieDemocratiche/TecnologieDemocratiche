@@ -1,4 +1,13 @@
 it:
+  layouts:
+    email_responsive:
+      title: "TECNOLOGIE DEMOCRATICHE"
+      follow_us: "Seguici:"
+      contact_us: "Contattaci:"
+      phone: "Telefono:"
+      email: "Email:"
+      terms_and_privacy_link: "Termini e Privacy"
+      terms_and_privacy_href: "http://www.tecnologiedemocratiche.it/it/privacy"
   devise:
     mailer:
       confirmation_instructions:
