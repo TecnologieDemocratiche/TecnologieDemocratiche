@@ -22,7 +22,7 @@ table
         td
           = link_to t('.action_links.show'), user, class: 'button success'
           = link_to t('.action_links.edit'), edit_user_path(user), class: 'button'
-          = link_to t('.action_links.destroy'), user, method: :delete, class: 'button alert'
+          = link_to t('.action_links.destroy'), user, method: :delete, class: 'button alert', data: { confirm: t('.action_links.sure_to_delete?', name: user.full_name) }
 = will_paginate @users, renderer: FoundationPagination::Rails
 
 = link_to t('.action_links.new'), new_user_path, class: 'button primary'

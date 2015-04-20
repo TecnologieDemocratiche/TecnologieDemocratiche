@@ -140,7 +140,8 @@ it:
         show: "Mostra"
         edit: "Modifica"
         destroy: "Elimina"
-        new: "Nuovo Utente"
+        new: "Nuovo utente"
+        sure_to_delete?: "Sei sicuro di voler eliminare l'utente %{name}?"
     show:
       no_approver: "ND"
       labels:
