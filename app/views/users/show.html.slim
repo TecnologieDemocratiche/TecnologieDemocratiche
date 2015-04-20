@@ -26,6 +26,6 @@ fieldset
     .columns.small-6
       = link_to t('download_document'), download_document_user_path(@user), target: :_blank
 
-= link_to 'Edit', edit_user_path(@user), class: 'button primary' if can? :edit, @user
-= link_to 'List users', users_path, class: 'button' if can? :index, User
+= link_to t('.edit_link'), edit_user_path(@user), class: 'button primary' if can? :edit, @user
+= link_to t('.list_users_link'), users_path, class: 'button' if can? :index, User
 

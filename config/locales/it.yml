@@ -151,3 +151,5 @@ it:
         birthdate: "Data di nascita"
         member_since: "Membro dal"
         member_until: "Membro fino al"
+      edit_link: "Modifica utente"
+      list_users_link: "Torna all'elenco"
