@@ -88,7 +88,7 @@ it:
               required: "Approver required if setting approved"
   documents: "Documentazione"
   download_payment_recipe: "Download ricevuta di pagamento"
-  download_document: "Download documento i identità"
+  download_document: "Download documento d'identità"
   layouts:
     application:
       title: "Tecnologie Democratiche"

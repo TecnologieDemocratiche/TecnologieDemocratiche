@@ -3,15 +3,19 @@
   .form-inputs
     fieldset
       legend = t('legends.account_data')
-      = f.input :email
+      
+      - if @user.status == :waiting_for_email
+        = f.input :email, label: t('simple_form.labels.user.not_verified_email'), label_html: { class: "error" }
+      - else
+        = f.input :email
       -if @user.new_record?
         = f.input :password
+      = f.input :approved
       .row
         .columns.small-6
-          = f.input :member_since, as: :string, input_html: {type: :date}
+          = f.input :member_since, as: :string, input_html: { type: :date, value: @user.member_since ? @user.member_since.to_date : nil }
         .columns.small-6
-          = f.input :member_until, as: :string, input_html: {type: :date}
-      = f.input :approved
+          = f.input :member_until, as: :string, input_html: { type: :date, value: @user.member_until ? @user.member_until.to_date : nil }
       = f.hidden_field :approver_id, value: current_user.id unless @user.approved?
     fieldset
       legend = t('legends.personal_data')
@@ -49,12 +53,14 @@
       .row
         .columns.small-6
           = f.input :payment_recipe
-        .columns.small-6
-          = link_to "Download Payment recipe", f.object.payment_recipe.url, target: :_blank
+        - if @user.payment_recipe.exists?
+          .columns.small-6
+            = link_to t('download_payment_recipe'), download_payment_recipe_user_path(@user), target: :_blank
       .row
         .columns.small-6
           = f.input :document
-        .columns.small-6
-          = link_to "Download document", f.object.document.url, target: :_blank
+        - if @user.document.exists?
+          .columns.small-6
+            = link_to t('download_document'), download_document_user_path(@user), target: :_blank
   .form-actions
     = f.submit class: 'button primary'
