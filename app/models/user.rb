@@ -24,9 +24,9 @@ class User < ActiveRecord::Base
   enum payment_type: [:not_yet, :paypal, :bank_transfer]
 
   STATUSES = {
-      approved: 'approved',
-      waiting_for_approval: 'waiting for approval',
-      waiting_for_email: 'waiting for email confirmation'
+      approved: I18n.t('simple_form.labels.user.statuses.approved'),
+      waiting_for_approval: I18n.t('simple_form.labels.user.statuses.waiting_for_approval'),
+      waiting_for_email: I18n.t('simple_form.labels.user.statuses.waiting_for_email_confirmation')
   }
 
   after_commit :notify_admin, on: :create
