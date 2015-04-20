@@ -2,7 +2,7 @@ it:
   devise:
     mailer:
       confirmation_instructions:
-        hello: "Ciao, %{name}"
+        hello: "Ciao %{name},"
         thank_you: "Grazie per esserti iscritto a Tecnologie Democratiche!"
         certified_account: "Hai inoltre compiuto il primo passo per ottenere un account certificato. Leggi attentamente questa email per concludere la procedura."
         confirm_email: "Conferma l'indirizzo email fornito cliccando qui:"
@@ -20,7 +20,7 @@ it:
                                  <p class='lead'> Grazie per esserti registrato! </p>
                                  <p> Il presidente di Tecnologie Democratiche, <br> Marino Tilatti </p>"
       reset_password_instructions:
-        hello: "Ciao, %{name}"
+        hello: "Ciao %{name},"
         change_request: "Qualcuno ha richiesto il link per il cambio password del tuo account. E' possibile effettuare l'operazione attraverso il link sottostante."
         change_link: "Cambia password"
         copy_url: "Oppure copia il seguente testo nella barra degli indirizzi del programma con cui navighi su internet:"
@@ -110,16 +110,16 @@ it:
   admin_mailer:
     new_user_waiting_for_approval:
       subject: "Un nuovo utente si è iscritto all'Associazione - %{name}"
-      hello: "Salve Amministratore di Tecnologie Democratiche,"
+      hello: "Ciao Amministratore di Tecnologie Democratiche,"
       body: "%{name} è un'utente che si è appena iscritto all'Associazione ed è in attesa della tua approvazione."
       aprove_link: "Approvalo Subito!"
-      feasible_invalid_tax_code: "Attenzione! il codice fiscale dell'utente potrebbe non essere corretto. E' necessario effettuare un controllo piu' approfondito sul sito dell'Agenzia delle Entrate."
-      validate_tax_code_link: "Verifica Codice Fiscale"
+      feasible_invalid_tax_code: "Attenzione! Il codice fiscale di questo Utente, dopo un primo controllo automatico, risulta non corretto. E' necessario verificarlo sul sito dell'"
+      validate_tax_code_link: "Agenzia delle Entrate"
       validate_tax_code_href: "https://telematici.agenziaentrate.gov.it/VerificaCF/Scegli.do?parameter=verificaCfPf"
   user_mailer:
     account_approved:
       subject: "Il tuo Account è stato correttamente approvato!"
-      hello: "Salve %{name},"
+      hello: "Ciao %{name},"
       body: "Tecnologie Democratiche è lieta di informarla che il suo account è stato approvato dai nostri amministratori e adesso può effettuare il Log in."
       login_link: "Efettua Log in!"
   users:

@@ -1,10 +1,16 @@
-p
-  = t '.hello'
-  br
-  = t '.body', name: @user.full_name
-  br
-  = link_to t('.approve_link'), edit_user_url(@user)
-  - if @user.feasible_invalid_tax_code?
-    .alert
-      = t '.feasible_invalid_tax_code'
-      = link_to t('.validate_tax_code_link'), t('.validate_tax_code_href')
+table.row
+  tr
+    td.wrapper.last
+      table.twelve.columns
+        tr
+          td
+            h1
+              = t('.hello')
+            p.lead
+              = t('.body', name: @user.full_name)
+            p.lead
+              = link_to t('.approve_link'), edit_user_url(@user)
+            - if @user.feasible_invalid_tax_code?
+              p.lead.alert
+                = t('.feasible_invalid_tax_code')
+                = link_to t('.validate_tax_code_link'), t('.validate_tax_code_href')

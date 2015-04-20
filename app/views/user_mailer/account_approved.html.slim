@@ -1,6 +1,12 @@
-p
-  = t '.hello', name: @user.full_name
-  br
-  = t '.body'
-  br
-  = link_to t('.login_link'), new_user_session_url
+table.row
+  tr
+    td.wrapper.last
+      table.twelve.columns
+        tr
+          td
+            h1
+              = t('.hello', name: @user.full_name)
+            p.lead
+              = t '.body'
+            p.lead
+              = link_to t('.login_link'), new_user_session_url
