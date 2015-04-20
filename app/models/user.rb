@@ -1,21 +1,9 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable, :registerable, :confirmable
 
-  validates :name, presence: true
-  validates :last_name, presence: true
-  validates :email, presence: true
+  validates :name, :last_name, :email, :birthdate, :birthplace, :birthplace_district, 
+            :gender, :tax_code, :address, :city, :city_district, :zip_code, :payment_type, presence: true
   validates_format_of :email, with: /\A.+@.+\..+\z/i
-  validates :birthdate, presence: true
-  validates :birthplace, presence: true
-  validates :birthplace_district, presence: true
-  validates :gender, presence: true
-  validates :tax_code, presence: true
-  validates :address, presence: true
-  validates :city, presence: true
-  validates :city_district, presence: true
-  validates :zip_code, presence: true
-  validates :payment_type, presence: true
-  #validates :payment_recipe, presence: true, on: :create
   validates :document, presence: true, on: :create
   validates :accept_cookies, acceptance: {accept: true}
   validates :accept_real_info, acceptance: {accept: true}
