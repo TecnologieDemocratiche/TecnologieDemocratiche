@@ -51,11 +51,11 @@ it:
         member_since: "Membro da:"
         member_until: "Membro fino a:"
         approved: "Approvato"
+        not_verified_email: "Email (non verificata)"
         statuses:
           approved: "Approvato"
           waiting_for_approval: "In attesa di approvazione"
-          waiting_for_email: "Email non verificata"
-          not_verified_email: "Email (non verificata)"
+          waiting_for_email_confirmation: "Email non verificata"
     #     new:
     #       email: 'E-mail to sign in.'
     #     edit:
