@@ -1,5 +1,37 @@
 it:
   devise:
+    mailer:
+      confirmation_instructions:
+        hello: "Ciao %{name},"
+        thank_you: "Grazie per esserti iscritto a Tecnologie Democratiche!"
+        certified_account: "Hai inoltre compiuto il primo passo per ottenere un account certificato. Leggi attentamente questa email per concludere la procedura."
+        confirm_email: "Conferma l'indirizzo email fornito cliccando qui:"
+        confirm_email_link: "Conferma indirizzo email"
+        copy_url: "Oppure copia il seguente testo nella barra degli indirizzi del programma con cui navighi su internet:"
+        not_payed_yet?: "Non hai ancora effettuato il pagamento?"
+        choose_payment_method: "Versa la quota associativa annuale di 20€ nel modo che preferisci:"
+        paypal_payment: "Iscrizione rapida cliccando sul pulsante PayPal qui sotto:"
+        bank_payment: "Oppure tramite bonifico su conto corrente:"
+        bank_details_html: "IBAN: IT76L0316501600000011758905 <br> BIC/SWIFT: IWBKITMM <br> Banca: IW BANK <br> Intestato a: Tecnologie Democratiche"
+        send_payment_recipe: "Inviaci la ricevuta di pagamento tramite email a info@tecnologiedemocratiche.it, usando l'indirizzo %{email}"
+        closing_paragraph_html: "<p> Impiegheremo dai tre ai sette giorni per concludere la procedura di verifica e attivazione account. </p>
+                                 <p> Quando il tuo account sarà attivo riceverai una conferma a questo indirizzo email. </p>
+                                 <p> In caso di problemi un nostro incaricato provvederà a contattarti. </p>
+                                 <p class='lead'> Grazie per esserti registrato! </p>
+                                 <p> Il presidente di Tecnologie Democratiche, <br> Marino Tilatti </p>"
+      reset_password_instructions:
+        hello: "Ciao %{name},"
+        change_request: "Qualcuno ha richiesto il link per il cambio password del tuo account. E' possibile effettuare l'operazione attraverso il link sottostante."
+        change_link: "Cambia password"
+        copy_url: "Oppure copia il seguente testo nella barra degli indirizzi del programma con cui navighi su internet:"
+        ignore_if_not_requested: "Se non hai richiesto quest'operazione, per favore ignora questo messaggio"
+        additional_info: "La tua password non verrà modificata fino al momento in cui visiterai il link sopra e ne imposterai una nuova."
+      unlock_instructions:
+        hello: "Ciao, %{name}"
+        locked_account: "Il tuo account è stato bloccato a causa di un'eccessivo numero di tentativi di accesso non corretti"
+        unlock_account: "Clicca il link sottostante per sbloccare il tuo account:"
+        unlock_account_link: "Sblocca il mio account"
+        copy_url: "Oppure copia il seguente testo nella barra degli indirizzi del programma con cui navighi su internet:"
     confirmations:
       new:
         title: "Non hai ricevuto le istruzioni per confermare il tuo account?"
@@ -62,6 +94,14 @@ it:
       title: "Tecnologie Democratiche"
       my_page: "Account"
       actions: "Azioni"
+    email_responsive:
+      title: "TECNOLOGIE DEMOCRATICHE"
+      follow_us: "Seguici:"
+      contact_us: "Contattaci:"
+      phone: "Telefono:"
+      email: "Email:"
+      terms_and_privacy_link: "Termini e Privacy"
+      terms_and_privacy_href: "http://www.tecnologiedemocratiche.it/it/privacy"
   welcome:
     show:
       welcome: "Benvenuto %{who}"
@@ -70,16 +110,16 @@ it:
   admin_mailer:
     new_user_waiting_for_approval:
       subject: "Un nuovo utente si è iscritto all'Associazione - %{name}"
-      hello: "Salve Amministratore di Tecnologie Democratiche,"
+      hello: "Ciao Amministratore di Tecnologie Democratiche,"
       body: "%{name} è un'utente che si è appena iscritto all'Associazione ed è in attesa della tua approvazione."
       aprove_link: "Approvalo Subito!"
-      feasible_invalid_tax_code: "Attenzione! il codice fiscale dell'utente potrebbe non essere corretto. E' necessario effettuare un controllo piu' approfondito sul sito dell'Agenzia delle Entrate."
-      validate_tax_code_link: "Verifica Codice Fiscale"
+      feasible_invalid_tax_code: "Attenzione! Il codice fiscale di questo Utente, dopo un primo controllo automatico, risulta non corretto. E' necessario verificarlo sul sito dell'"
+      validate_tax_code_link: "Agenzia delle Entrate"
       validate_tax_code_href: "https://telematici.agenziaentrate.gov.it/VerificaCF/Scegli.do?parameter=verificaCfPf"
   user_mailer:
     account_approved:
       subject: "Il tuo Account è stato correttamente approvato!"
-      hello: "Salve %{name},"
+      hello: "Ciao %{name},"
       body: "Tecnologie Democratiche è lieta di informarla che il suo account è stato approvato dai nostri amministratori e adesso può effettuare il Log in."
       login_link: "Efettua Log in!"
   users:
