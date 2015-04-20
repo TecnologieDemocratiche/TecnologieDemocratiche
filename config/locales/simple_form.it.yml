@@ -29,6 +29,7 @@ it:
         email: 'Email'
         password: 'Password'
         password_confirmation: 'Conferma Password'
+        remember_me: "Resta collegato"
       user:
         name: Nome completo (come appare in carta d'identità)
         last_name: Cognome
