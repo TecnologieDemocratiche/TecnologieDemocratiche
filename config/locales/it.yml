@@ -1,13 +1,4 @@
 it:
-  layouts:
-    email_responsive:
-      title: "TECNOLOGIE DEMOCRATICHE"
-      follow_us: "Seguici:"
-      contact_us: "Contattaci:"
-      phone: "Telefono:"
-      email: "Email:"
-      terms_and_privacy_link: "Termini e Privacy"
-      terms_and_privacy_href: "http://www.tecnologiedemocratiche.it/it/privacy"
   devise:
     mailer:
       confirmation_instructions:
@@ -20,7 +11,7 @@ it:
         not_payed_yet?: "Non hai ancora effettuato il pagamento?"
         choose_payment_method: "Versa la quota associativa annuale di 20€ nel modo che preferisci:"
         paypal_payment: "Iscrizione rapida cliccando sul pulsante PayPal qui sotto:"
-        bank_payment: "oppure tramite bonifico su conto corrente"
+        bank_payment: "Oppure tramite bonifico su conto corrente:"
         bank_details_html: "IBAN: IT76L0316501600000011758905 <br> BIC/SWIFT: IWBKITMM <br> Banca: IW BANK <br> Intestato a: Tecnologie Democratiche"
         send_payment_recipe: "Inviaci la ricevuta di pagamento tramite email a info@tecnologiedemocratiche.it, usando l'indirizzo %{email}"
         closing_paragraph_html: "<p> Impiegheremo dai tre ai sette giorni per concludere la procedura di verifica e attivazione account. </p>
@@ -103,6 +94,14 @@ it:
       title: "Tecnologie Democratiche"
       my_page: "Account"
       actions: "Azioni"
+    email_responsive:
+      title: "TECNOLOGIE DEMOCRATICHE"
+      follow_us: "Seguici:"
+      contact_us: "Contattaci:"
+      phone: "Telefono:"
+      email: "Email:"
+      terms_and_privacy_link: "Termini e Privacy"
+      terms_and_privacy_href: "http://www.tecnologiedemocratiche.it/it/privacy"
   welcome:
     show:
       welcome: "Benvenuto %{who}"
