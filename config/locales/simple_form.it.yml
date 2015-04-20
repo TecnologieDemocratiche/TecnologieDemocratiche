@@ -48,6 +48,10 @@ it:
         accept_privacy: Accetto
         accept_terms: Accetto
         accept_cookies: Accetto
+        member_since: "Membro da:"
+        member_until: "Membro fino a:"
+        approved: "Approvato"
+        not_verified_email: "Email (non verificata)"
     #     new:
     #       email: 'E-mail to sign in.'
     #     edit:
