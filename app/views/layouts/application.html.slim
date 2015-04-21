@@ -23,7 +23,7 @@ html lang="en"
               li.active
                 = link_to t('.my_page'), current_user
               li.has-dropdown
-                = link_to t('.actions'), '#'
+                a href="#" = t('.actions')
                 ul.dropdown
                   li
                     = link_to t('buttons.logout'), destroy_user_session_path, method: :delete
