@@ -29,3 +29,9 @@ module TecnologieDemocratiche
 
   end
 end
+
+if Rails.env.production?
+  Dynopoker.configure do |config|
+      config.address = 'http://tecnologiedemocratiche.herokuapp.com'
+  end
+end

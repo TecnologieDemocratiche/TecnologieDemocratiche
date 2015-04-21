@@ -56,4 +56,6 @@ group :production do
   gem 'rails_12factor'
   gem 'sentry-raven'
   gem 'newrelic_rpm'
+  # wake up my dyno by pinging the webiste each half hour
+  gem 'dynopoker'
 end
