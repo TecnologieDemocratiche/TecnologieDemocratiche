@@ -7,6 +7,15 @@ table.row
             h1
               = t('.hello', name: @user.full_name)
             p.lead
-              = t '.body'
-            p.lead
-              = link_to t('.login_link'), new_user_session_url
+              = t('.approved')
+          td.expander
+table.row.callout
+  tr
+    td.wrapper.last
+      table.twelve.columns
+        tr
+          td.panel
+            p
+              = t('.benefits_html')
+
+= t('.closing_paragraph_html')
