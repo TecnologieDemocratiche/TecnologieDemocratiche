@@ -118,17 +118,16 @@ it:
       validate_tax_code_href: "https://telematici.agenziaentrate.gov.it/VerificaCF/Scegli.do?parameter=verificaCfPf"
   user_mailer:
     account_approved:
-      subject: "Il tuo Account è stato correttamente approvato!"
+      subject: "Il tuo Account è stato approvato!"
       hello: "Ciao %{name},"
-      approved: "Tecnologie Democratiche è lieta di informarti che il tuo account è stato approvato dai nostri amministratori, Congratulazioni!"
-      benefits_html: "<p class='lead'>Grazie all'approvazione:</p>
+      approved: "Tecnologie Democratiche è lieta di informarti che la tua iscrizione è stata approvata e che ora fai parte dell'associazione. Congratulazioni!"
+      benefits_html: "<p class='lead'>Grazie alla tua iscrizione:</p>
                       <ul>
                         <li>Potrai <strong>partecipare a tutte le <a href='http://www.tecnologiedemocratiche.it/statuto'>attività</a> dell'associazione</strong> in prima persona attraverso il <a href='http://www.airesis.it/groups/113-tecnologie-democratiche'>gruppo di Airesis</a> e il gruppo dell'<a href='http://www.airesis.it/groups/tecnologie-democratiche'>associazione Tecnologie Democratiche</a>.</li>
-                        <li>Hai ottenuto un'<strong>utenza certificata su Airesis</strong>.</li>
-                        <li>Contribuisci a diffondere la <strong>cultura democratica</strong> e i suoi <strong>strumenti innovativi</strong>.</li>
-                        <li>Sostieni le iniziative che promuovono il <a href='http://www.wikipedia.org/wiki/it:software_libero'>software libero</a>.</li>
-                        <li>Sarai <strong>informato in tempo reale</strong> di tutte le nostre iniziative.</li>
-                        <li>Potrai <strong><a href='http://tecnologiedemocratiche.herokuapp.com/'>effettuare il login</a> in qualsiasi momento</strong> per verificare la correttezza dei tuoi dati e per controllare la data di scadenza del tuo Account.</li>
+                        <li>Ottenere un'<strong>utenza certificata su Airesis</strong>.</li>
+                        <li>Contribuire a diffondere la <strong>cultura democratica</strong> e i suoi <strong>strumenti innovativi</strong>.</li>
+                        <li>Essere <strong>informato in tempo reale</strong> di tutte le nostre iniziative.</li>
+                        <li>Potrai inoltre <strong><a href='http://tecnologiedemocratiche.herokuapp.com/'>effettuare il login</a> in qualsiasi momento</strong> per verificare la correttezza dei tuoi dati e per controllare la data di scadenza del tuo Account.</li>
                       </ul>"
       closing_paragraph_html: "<p>Il presidente di Tecnologie Democratiche, <br> Marino Tilatti </p>"
   users:
