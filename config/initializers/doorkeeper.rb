@@ -1,4 +1,4 @@
-Doorkeeper.configure do
+Doorkeeper.configure do |config|
   # Change the ORM that doorkeeper will use.
   # Currently supported options are :active_record, :mongoid2, :mongoid3, :mongo_mapper
   orm :active_record
@@ -32,6 +32,7 @@ Doorkeeper.configure do
   # a registered application
   # Note: you must also run the rails g doorkeeper:application_owner generator to provide the necessary support
   # enable_application_owner :confirmation => false
+
 
   # Define access token scopes for your provider
   # For more information go to
@@ -85,3 +86,5 @@ Doorkeeper.configure do
   # set to true if you want this to be allowed
   # wildcard_redirect_uri false
 end
+
+Doorkeeper.configuration.force_ssl_in_redirect_uri(false)
