@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable, :registerable, :confirmable
 
-  validates :name, :last_name, :email, :birthdate, :birthplace, :birthplace_district, 
+  validates :name, :last_name, :email, :birthdate, :birthplace, :birthplace_district,
             :gender, :tax_code, :address, :city, :city_district, :zip_code, :payment_type, presence: true
   validates_format_of :email, with: /\A.+@.+\..+\z/i
   validates :document, presence: true, on: :create
@@ -16,24 +16,27 @@ class User < ActiveRecord::Base
 
   has_attached_file :payment_recipe
   validates_attachment_content_type :payment_recipe,
-                                    content_type: ['application/pdf', 'application/msword', 'text/plain', 'image/jpeg', 'image/gif', 'image/png']
+                                    content_type: ['application/pdf', 'application/msword', 'text/plain',
+                                                   'image/jpeg', 'image/gif', 'image/png']
 
   has_attached_file :document
-  validates_attachment_content_type :document, content_type: ['application/pdf', 'application/msword', 'text/plain', 'image/jpeg', 'image/gif', 'image/png']
+  validates_attachment_content_type :document,
+                                    content_type: ['application/pdf', 'application/msword', 'text/plain',
+                                                   'image/jpeg', 'image/gif', 'image/png']
 
   enum payment_type: [:not_yet, :paypal, :bank_transfer]
 
   STATUSES = {
-      approved: I18n.t('simple_form.labels.user.statuses.approved'),
-      waiting_for_approval: I18n.t('simple_form.labels.user.statuses.waiting_for_approval'),
-      waiting_for_email: I18n.t('simple_form.labels.user.statuses.waiting_for_email_confirmation')
+    approved: I18n.t('simple_form.labels.user.statuses.approved'),
+    waiting_for_approval: I18n.t('simple_form.labels.user.statuses.waiting_for_approval'),
+    waiting_for_email: I18n.t('simple_form.labels.user.statuses.waiting_for_email_confirmation')
   }
 
   after_commit :notify_admin, on: :create
 
-  before_save :notify_user, if: Proc.new { |user| user.approved? && user.approved_changed? }
+  before_save :notify_user, if: proc { |user| user.approved? && user.approved_changed? }
 
-  before_validation :remove_approver, if: Proc.new { |user| !user.approved? && user.approved_changed? }
+  before_validation :remove_approver, if: proc { |user| !user.approved? && user.approved_changed? }
 
   def full_name
     "#{name} #{last_name}"
@@ -49,8 +52,8 @@ class User < ActiveRecord::Base
 
   def active_for_authentication?
     super && approved? &&
-        (Date.today >= member_since) &&
-        (Date.today <= member_until)
+      (Date.today >= member_since) &&
+      (Date.today <= member_until)
   end
 
   def inactive_message
@@ -61,7 +64,7 @@ class User < ActiveRecord::Base
     end
   end
 
-  def self.send_reset_password_instructions(attributes={})
+  def self.send_reset_password_instructions(attributes = {})
     recoverable = find_or_initialize_with_errors(reset_password_keys, attributes, :not_found)
     if !recoverable.approved?
       recoverable.errors[:base] << I18n.t('devise.failure.not_approved')
@@ -71,33 +74,32 @@ class User < ActiveRecord::Base
     recoverable
   end
 
-
-  def as_json(options = {})
+  def as_json(_options = {})
     {
-        id: id,
-        name: name,
-        last_name: last_name,
-        tax_code: tax_code,
-        gender: gender,
-        email: email
+      id: id,
+      name: name,
+      last_name: last_name,
+      tax_code: tax_code,
+      gender: gender,
+      email: email
     }
   end
 
-  #TODO: I18n
+  # TODO: I18n
   def feasible_invalid_tax_code?
     calculated_tax_code != tax_code.upcase
   rescue ArgumentError
     true
   end
 
-  #TODO: I18n
+  # TODO: I18n
   def calculated_tax_code
-    CodiceFiscaleTools.calculate( name: name,
-                                  surname: last_name,
-                                  gender: {'M' => :male, 'F' => :female }[gender],
-                                  birthdate: birthdate,
-                                  province_code: birthplace_district,
-                                  city_name: birthplace )
+    CodiceFiscaleTools.calculate(name: name,
+                                 surname: last_name,
+                                 gender: {'M' => :male, 'F' => :female}[gender],
+                                 birthdate: birthdate,
+                                 province_code: birthplace_district,
+                                 city_name: birthplace)
   end
 
   private

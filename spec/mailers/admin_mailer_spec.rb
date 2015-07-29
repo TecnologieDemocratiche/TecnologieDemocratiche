@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe AdminMailer do
-
   before(:each) do
     ActionMailer::Base.delivery_method = :test
     ActionMailer::Base.perform_deliveries = true
@@ -18,7 +17,6 @@ describe AdminMailer do
   end
 
   describe 'when a new user registers' do
-
     before(:each) do
       @user = FactoryGirl.create(:user)
       ActionMailer::Base.deliveries.clear
@@ -33,27 +31,27 @@ describe AdminMailer do
     end
 
     it 'sends it to administrators' do
-      expect(@sent_email.to).to eq( [@admin.email] )
+      expect(@sent_email.to).to eq([@admin.email])
     end
 
     it 'sets the correct subject' do
-      expect(@sent_email.subject).to include( "#{@user.full_name}" )
+      expect(@sent_email.subject).to include("#{@user.full_name}")
     end
 
-    it 'sets the correct sender' do  
-      expect(@sent_email.from).to eq( [ENV['TD_EMAIL']] )
+    it 'sets the correct sender' do
+      expect(@sent_email.from).to eq([ENV['TD_EMAIL']])
     end
 
     it 'sets the correct body' do
-      expect(@sent_email.body.encoded).to include( "#{@user.full_name}" )
+      expect(@sent_email.body.encoded).to include("#{@user.full_name}")
     end
   end
 
   describe 'when a user with valid tax code registers' do
     before(:each) do
       @user = FactoryGirl.build(:user)
-      @user.birthplace = "Cattolica"
-      @user.birthplace_district = "RN"
+      @user.birthplace = 'Cattolica'
+      @user.birthplace_district = 'RN'
       @user.tax_code = @user.calculated_tax_code
       @user.save!
       ActionMailer::Base.deliveries.clear
@@ -64,7 +62,7 @@ describe AdminMailer do
     end
 
     it 'does not alert the Administrators' do
-      expect(@sent_email.body.encoded).not_to include( I18n.t('admin_mailer.new_user_waiting_for_approval.validate_tax_code_link') )
+      expect(@sent_email.body.encoded).not_to include(I18n.t('admin_mailer.new_user_waiting_for_approval.validate_tax_code_link'))
     end
   end
 
@@ -81,7 +79,7 @@ describe AdminMailer do
     end
 
     it 'alerts the Administrators' do
-      expect(@sent_email.body.encoded).to include( I18n.t('admin_mailer.new_user_waiting_for_approval.validate_tax_code_link') )
+      expect(@sent_email.body.encoded).to include(I18n.t('admin_mailer.new_user_waiting_for_approval.validate_tax_code_link'))
     end
   end
 end

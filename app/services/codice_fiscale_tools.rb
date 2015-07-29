@@ -3,7 +3,6 @@ require 'codice_fiscale'
 
 # This class stores the procedures needed to handle the format of italian codice fiscale
 class CodiceFiscaleTools
-
   # Regex for validation. It validates the code without the check-digit.
   # It also separates the sections with appropriate grouping. Example:
   # codice_fiscale =~ FORMAT_NO_CHECK_DIGIT
@@ -19,49 +18,46 @@ class CodiceFiscaleTools
   FORMAT = /#{FORMAT_NO_CHECK_DIGIT}([A-Z])/
 
   # Check digit translation table for odd positions
-  ODD = YAML.load(File.read("config/data/odd_map.yml"))
+  ODD = YAML.load(File.read('config/data/odd_map.yml'))
 
   # Check digit translation table for even positions
-  EVEN = YAML.load(File.read("config/data/even_map.yml"))
+  EVEN = YAML.load(File.read('config/data/even_map.yml'))
 
   # Translation for the month field
-  MONTHS = YAML.load(File.read("config/data/months_map.yml"))
+  MONTHS = YAML.load(File.read('config/data/months_map.yml'))
 
   # Validates a codice fiscale. It checks for format and check-digit correctness
   def self.valid?(str)
     return false unless str
     str.upcase!
     return false unless str =~ FORMAT
-    return false unless str[-1, 1] == self.check_digit(str[0..14], true)
+    return false unless str[-1, 1] == check_digit(str[0..14], true)
     true
   end
 
   # Calulates check digit. It raises +ArgumentError+ if the format is not valid.
-  def self.check_digit(str, format_ok=false)
-    unless format_ok
-      self.upcase_match(str, FORMAT_NO_CHECK_DIGIT)
-    end
+  def self.check_digit(str, format_ok = false)
+    upcase_match(str, FORMAT_NO_CHECK_DIGIT) unless format_ok
 
     sum = 0
     (0..14).each do |i|
-      if (i+1).even?
+      if (i + 1).even?
         sum += EVEN[str[i].chr]
       else
         sum += ODD[str[i].chr]
       end
     end
-    ((sum % 26) + "A".ord).chr
+    ((sum % 26) + 'A'.ord).chr
   end
-
 
   def self.upcase_match(str, fmt)
-    raise ArgumentError.new("nil input") unless str
+    fail ArgumentError.new('nil input') unless str
     str.upcase!
-    raise ArgumentError.new("Input doesn't match with codice fiscale format") unless str =~ fmt
-    $~
+    fail ArgumentError.new("Input doesn't match with codice fiscale format") unless str =~ fmt
+    $LAST_MATCH_INFO
   end
 
-  def self.calculate params
+  def self.calculate(params)
     CodiceFiscale.calculate params
   end
 end

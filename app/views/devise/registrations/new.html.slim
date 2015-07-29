@@ -15,33 +15,33 @@ h2 = t('.title')
   fieldset
     legend = t('legends.personal_data')
     .row
-      .columns.small-6
+      .columns.medium-6
         = f.input :name
-      .columns.small-6
+      .columns.medium-6
         = f.input :last_name
     .row
-      .columns.small-4
+      .columns.medium-4
         = f.input :birthdate, as: :string, input_html: {type: :date}
-      .columns.small-6
+      .columns.medium-6
         .row
-          .columns.small-8
+          .columns.medium-8
             = f.input :birthplace
-          .columns.small-4
+          .columns.medium-4
             = f.input :birthplace_district, collection: District.all.invert
-      .columns.small-2
+      .columns.medium-2
         = f.input :gender, as: :radio_buttons, collection: ['M', 'F']
     = f.input :tax_code
   fieldset
     legend = t('legends.residency')
     = f.input :address
     .row
-      .columns.small-8
+      .columns.medium-8
         .row
-          .columns.small-8
+          .columns.medium-8
             = f.input :city
-          .columns.small-4
+          .columns.medium-4
             = f.input :zip_code
-      .columns.small-4
+      .columns.medium-4
         = f.input :city_district, collection: District.all.invert
   fieldset
     legend = t('legends.correct_infos')

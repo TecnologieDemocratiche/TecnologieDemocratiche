@@ -1,7 +1,7 @@
 it:
   devise:
     confirmations:
-      confirmed: "Il tuo account è stato correttamente confermato. Ora sei collegato."
+      confirmed: "Il tuo indirizzo email è stato correttamente confermato. Riceverai una mail appena il tuo account sarà stato attivato dai nostri certificatori."
       send_instructions: "Riceverai un messaggio email con le istruzioni per confermare il tuo account entro qualche minuto."
       send_paranoid_instructions: "Se la tua email esiste nel nostro database, entro qualche minuto riceverai un messaggio email con le istruzioni per confermare il tuo account."
     failure:
@@ -37,6 +37,7 @@ it:
       signed_up_but_inactive: "Ti sei registrato correttamente. Tuttavia non puoi effettuare l'accesso perchè il tuo account non è stato ancora attivato."
       signed_up_but_locked: "Ti sei registrato correttamente. Tuttavia non puoi effettuare l'accesso perchè il tuo account è bloccato."
       signed_up_but_unconfirmed: "Ti sei registrato correttamente. Tuttavia non puoi effettuare l'accesso perchè il tuo account è da confermare. Per favore apri il link che hai ricevuto tramite email per attivare il tuo account."
+      signed_up_but_not_approved: "Ti sei registrato correttamente. Tuttavia non puoi effettuare l'accesso perchè il tuo account è da confermare. Per favore apri il link che hai ricevuto tramite email per attivare il tuo account."
       update_needs_confirmation: "Il tuo account è stato aggiornato, tuttavia è necessario verificare il tuo nuovo indirizzo email. Entro qualche minuto riceverai un messaggio email con le istruzioni per confermare il tuo nuovo indirizzo email."
       updated: "Il tuo account è stato aggiornato."
     sessions:

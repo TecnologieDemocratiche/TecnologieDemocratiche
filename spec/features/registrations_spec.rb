@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-describe "registration process", type: :feature do
-  it "can register correctly" do
+describe 'registration process', type: :feature do
+  it 'can register correctly' do
     visit new_user_registration_path
     select I18n.t('payment_type.bank_transfer'), from: I18n.t('simple_form.labels.user.payment_type')
-    attach_file I18n.t('simple_form.labels.user.document'), "spec/cucumber-1.jpg"
+    attach_file I18n.t('simple_form.labels.user.document'), 'spec/cucumber-1.jpg'
     fill_in I18n.t('simple_form.labels.defaults.email'), with: Faker::Internet.email
     find(:css, '#user_password').set 'topolino'
     find(:css, '#user_password_confirmation').set 'topolino'
@@ -25,6 +25,5 @@ describe "registration process", type: :feature do
     find(:css, '#user_accept_terms').set(true)
     click_button I18n.t('helpers.submit.user.create')
     expect(User.count).to eq 1
-
   end
 end

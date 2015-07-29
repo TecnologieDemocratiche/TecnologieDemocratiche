@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe UserMailer do
-
   before(:each) do
     ActionMailer::Base.delivery_method = :test
     ActionMailer::Base.perform_deliveries = true
@@ -31,20 +30,19 @@ describe UserMailer do
     end
 
     it 'sends it to the correct user' do
-      expect(@sent_email.to).to eq( [@user.email] )
+      expect(@sent_email.to).to eq([@user.email])
     end
 
     it 'sets the correct subject' do
-      expect(@sent_email.subject).to eq( I18n.t('user_mailer.account_approved.subject') )
+      expect(@sent_email.subject).to eq(I18n.t('user_mailer.account_approved.subject'))
     end
 
-    it 'sets the correct sender' do  
-      expect(@sent_email.from).to eq( [ENV['TD_EMAIL']] )
+    it 'sets the correct sender' do
+      expect(@sent_email.from).to eq([ENV['TD_EMAIL']])
     end
 
     it 'sets the correct body' do
-      expect(@sent_email.body.encoded).to include( "#{@user.full_name}" )
+      expect(@sent_email.body.encoded).to include("#{@user.full_name}")
     end
   end
-
 end

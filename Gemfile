@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-ruby '2.2.0'
+ruby File.read('.ruby-version').strip
 
-gem 'rails', '~> 4.2'
+gem 'rails', '~> 4.2.0'
 gem 'pg'
 gem 'sass-rails'
 gem 'uglifier'
@@ -40,6 +40,7 @@ group :development do
   gem 'bullet'
   gem 'spring'
   gem 'rubocop'
+  gem 'letter_opener'
 end
 
 group :test do
@@ -49,7 +50,6 @@ group :test do
   gem 'database_cleaner'
   gem 'capybara-webkit'
   gem 'capybara-screenshot'
-
 end
 
 group :production do

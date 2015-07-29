@@ -1,5 +1,5 @@
 class AdminMailer < ApplicationMailer
-  default to: Proc.new { User.where(admin: true).pluck(:email) }
+  default to: proc { User.where(admin: true).pluck(:email) }
 
   def new_user_waiting_for_approval(user)
     @user = user

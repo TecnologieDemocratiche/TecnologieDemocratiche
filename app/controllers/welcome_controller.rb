@@ -1,7 +1,6 @@
 # homepage controller
 class WelcomeController < ApplicationController
-  before_filter :authenticate_user!
-
   def show
+    redirect_to new_user_session_path unless signed_in?
   end
 end
