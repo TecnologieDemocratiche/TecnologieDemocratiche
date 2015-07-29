@@ -43,7 +43,11 @@ class User < ActiveRecord::Base
   end
 
   def status
-    confirmed? ? approved? ? :approved : :waiting_for_approval : :waiting_for_email
+    if confirmed?
+      approved? ? :approved : :waiting_for_approval
+    else
+      :waiting_for_email
+    end
   end
 
   def status_label
@@ -75,14 +79,7 @@ class User < ActiveRecord::Base
   end
 
   def as_json(_options = {})
-    {
-      id: id,
-      name: name,
-      last_name: last_name,
-      tax_code: tax_code,
-      gender: gender,
-      email: email
-    }
+    {id: id, name: name, last_name: last_name, tax_code: tax_code, gender: gender, email: email}
   end
 
   # TODO: I18n
@@ -105,8 +102,10 @@ class User < ActiveRecord::Base
   private
 
   def approvation_fields_consistency
-    errors.add(:approver, I18n.t('activerecord.errors.models.user.attributes.approver.required')) if !approver && approved
-    errors.add(:approved, I18n.t('activerecord.errors.models.user.attributes.approved.required')) if approver && !approved
+    errors.add(:approver,
+               I18n.t('activerecord.errors.models.user.attributes.approver.required')) if !approver && approved
+    errors.add(:approved,
+               I18n.t('activerecord.errors.models.user.attributes.approved.required')) if approver && !approved
   end
 
   def notify_admin
@@ -114,7 +113,8 @@ class User < ActiveRecord::Base
   end
 
   def valid_tax_code
-    errors.add(:tax_code, I18n.t('activerecord.errors.models.user.attributes.tax_code.invalid')) unless CodiceFiscaleTools.valid?(tax_code)
+    message = I18n.t('activerecord.errors.models.user.attributes.tax_code.invalid')
+    errors.add(:tax_code, message) unless CodiceFiscaleTools.valid?(tax_code)
   end
 
   def notify_user
