@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   validates :accept_real_info, acceptance: {accept: true}
   validates :accept_privacy, acceptance: {accept: true}
   validates :accept_terms, acceptance: {accept: true}
+  validates :tax_code, uniqueness: true
   validate :valid_tax_code
 
   belongs_to :approver, class_name: 'User'

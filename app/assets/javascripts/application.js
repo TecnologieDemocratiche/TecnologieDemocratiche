@@ -17,8 +17,22 @@
 //= require foundation
 //= require nprogress
 //= require nprogress-turbolinks
+//= require formValidation.min
+//= require formValidation-foundation.min
 //= require_tree .
 
 $(function () {
     $(document).foundation();
+    $('form').formValidation({
+        framework: 'foundation',
+        icon: {
+            valid: 'fa fa-check',
+            invalid: 'fa fa-times',
+            validating: 'fa fa-refresh'
+        },
+        trigger: 'blur',
+        row: {
+            selector: '.input'
+        }
+    });
 });

@@ -7,12 +7,10 @@ Rails.application.routes.draw do
     request.env['warden'].authenticate? && request.env['warden'].user.admin?
   end
 
-  constraints admin_required do
-    resources :users do
-      member do
-        get :download_document
-        get :download_payment_recipe
-      end
+  resources :users do
+    member do
+      get :download_document
+      get :download_payment_recipe
     end
   end
 
