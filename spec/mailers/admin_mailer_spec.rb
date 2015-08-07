@@ -2,11 +2,7 @@ require 'rails_helper'
 
 describe AdminMailer do
   before(:each) do
-    ActionMailer::Base.delivery_method = :test
-    ActionMailer::Base.perform_deliveries = true
-    ActionMailer::Base.deliveries = []
-
-    @admin = FactoryGirl.build(:user, admin: true)
+    @admin = build(:user, admin: true, tax_code: 'RDOLSN86M19D704W')
     @admin.skip_confirmation!
     @admin.save!
     @admin.confirm!
@@ -18,7 +14,7 @@ describe AdminMailer do
 
   describe 'when a new user registers' do
     before(:each) do
-      @user = FactoryGirl.create(:user)
+      @user = create(:user)
       ActionMailer::Base.deliveries.clear
 
       # manually calling callback since we are in test environment
