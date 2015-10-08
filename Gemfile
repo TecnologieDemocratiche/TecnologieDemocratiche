@@ -24,7 +24,6 @@ gem 'simple_form'
 gem 'will_paginate-foundation'
 gem 'paperclip'
 gem 'aws-sdk', '< 2.0'
-gem 'font-awesome-rails'
 gem 'will_paginate'
 gem 'did_you_mean'
 gem 'sdoc', group: :doc
@@ -35,6 +34,7 @@ gem 'faker'
 gem 'codice-fiscale', git: 'https://github.com/topac/codice_fiscale.git'
 
 group :development do
+  gem 'did_you_mean'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'quiet_assets'
@@ -42,6 +42,7 @@ group :development do
   gem 'spring'
   gem 'rubocop'
   gem 'letter_opener'
+  gem 'pry-rails'
 end
 
 group :test do
@@ -51,6 +52,7 @@ group :test do
   gem 'database_cleaner'
   gem 'capybara-webkit'
   gem 'capybara-screenshot'
+  gem 'simplecov', require: false
 end
 
 group :production do

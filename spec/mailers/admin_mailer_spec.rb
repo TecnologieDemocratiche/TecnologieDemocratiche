@@ -5,7 +5,7 @@ describe AdminMailer do
     @admin = build(:user, admin: true, tax_code: 'RDOLSN86M19D704W')
     @admin.skip_confirmation!
     @admin.save!
-    @admin.confirm!
+    @admin.confirm
   end
 
   after(:each) do

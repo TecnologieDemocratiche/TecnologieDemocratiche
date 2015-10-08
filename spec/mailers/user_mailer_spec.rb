@@ -5,11 +5,10 @@ describe UserMailer do
     ActionMailer::Base.delivery_method = :test
     ActionMailer::Base.perform_deliveries = true
     ActionMailer::Base.deliveries = []
-
     @admin = FactoryGirl.build(:user, admin: true)
     @admin.skip_confirmation!
     @admin.save!
-    @admin.confirm!
+    @admin.confirm
 
     @user = FactoryGirl.build(:user)
     ActionMailer::Base.deliveries.clear
