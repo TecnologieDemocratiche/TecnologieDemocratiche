@@ -5,7 +5,7 @@ h1 = t('.title')
 = link_to t('.users_waiting_approval'), users_path(status: :waiting_for_approval), class: 'button'
 
 
-= will_paginate @users, renderer: FoundationPagination::Rails
+= paginate @users
 table
   thead
     tr
@@ -23,6 +23,6 @@ table
           = link_to t('.action_links.show'), user, class: 'button success'
           = link_to t('.action_links.edit'), edit_user_path(user), class: 'button'
           = link_to t('.action_links.destroy'), user, method: :delete, class: 'button alert', data: { confirm: t('.action_links.sure_to_delete?', name: user.full_name) }
-= will_paginate @users, renderer: FoundationPagination::Rails
+= paginate @users
 
 = link_to t('.action_links.new'), new_user_path, class: 'button primary'

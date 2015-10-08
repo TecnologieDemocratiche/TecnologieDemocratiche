@@ -1,0 +1,129 @@
+it:
+  admin:
+    actions:
+      bulk_delete:
+        breadcrumb: Eliminazione multipla
+        bulk_link: Elimina %{model_label_plural} selezionati
+        menu: Eliminazione multipla
+        title: Elimina %{model_label_plural}
+      dashboard:
+        breadcrumb: Pannello di controllo
+        menu: Pannello di controllo
+        title: Amministrazione
+      delete:
+        breadcrumb: Elimina
+        done: eliminato
+        link: Elimina '%{object_label}'
+        menu: Elimina
+        title: Elimina %{model_label} '%{object_label}'
+      edit:
+        breadcrumb: Modifica
+        done: Modificato
+        link: Modifica questo %{model_label}
+        menu: Modifica
+        title: Modifica %{model_label} '%{object_label}'
+      export:
+        breadcrumb: Esporta
+        bulk_link: Esporta %{model_label_plural} selezionati
+        done: Esportati
+        link: Esporta %{model_label_plural} trovati
+        menu: Esporta
+        title: Esporta %{model_label_plural}
+      history_index:
+        breadcrumb: Storico
+        menu: Storico
+        title: Storico %{model_label_plural}
+      history_show:
+        breadcrumb: Storico
+        menu: Storico
+        title: Storico %{model_label} di '%{object_label}'
+      index:
+        breadcrumb: "%{model_label_plural}"
+        menu: Elenco
+        title: Elenco %{model_label_plural}
+      new:
+        breadcrumb: Nuovo
+        done: creato
+        link: Aggiungi nuovo %{model_label}
+        menu: Aggiungi nuovo
+        title: Nuovo %{model_label}
+      show:
+        breadcrumb: "%{object_label}"
+        menu: Visualizza
+        title: Dettaglio %{model_label} '%{object_label}'
+      show_in_app:
+        menu: Visualizza nell'applicazione
+    export:
+      click_to_reverse_selection: Clicca per invertire la selezione
+      confirmation: Esporta in  %{name}
+      csv:
+        col_sep: Separatore colonna
+        col_sep_help: Lasciare vuoto per il valore di default ('%{value}')
+        default_col_sep: ","
+        encoding_to: Codifica come
+        encoding_to_help: 'Seleziona la codifica di output. Lascia vuoto per tenere la codifica corrente: (%{name})'
+        header_for_association_methods: "%{name} [%{association}]"
+        header_for_root_methods: "%{name}"
+        skip_header: Nessuna intestazione
+        skip_header_help: Non esportare l'intestazione (nessuna descrizione per i campi)
+      display: 'Mostra %{name}: %{type}'
+      empty_value_for_associated_objects: "<empty>"
+      fields_from: Campi da %{name}
+      fields_from_associated: Campi da %{name} associato
+      options_for: Opzioni per %{name}
+      select: Seleziona i campi per esportare
+    flash:
+      error: "%{name} fallisce nel %{action}"
+      model_not_found: Modello '%{model}' non si trova
+      noaction: Nessuna azione presa
+      object_not_found: "%{model} con id '%{id}' non puo essere trovato"
+      successful: "%{name} esegue con successo %{action}"
+    form:
+      all_of_the_following_related_items_will_be_deleted: "? I seguenti elementi correlati potrebbero essere eliminati o resi orfani:"
+      are_you_sure_you_want_to_delete_the_object: Sei sicuro di voler eliminare questo %{model_name}
+      basic_info: Informazioni base
+      bulk_delete: 'I seguenti oggetti saranno eliminati, potrebbero essere eliminati o resi orfani anche i loro elementi correlati:'
+      cancel: Annulla
+      char_length_of: lunghezza di
+      char_length_up_to: lunghezza fino a
+      confirmation: Si, sono sicuro
+      new_model: "%{name} (new)"
+      one_char: carattere
+      optional: Opzionale
+      required: Obbligatorio
+      save: Salva
+      save_and_add_another: Salva ed aggiungi nuovo
+      save_and_edit: Salva e modifica
+    misc:
+      add_filter: Aggiungi filtro
+      add_new: Aggiungi filtro
+      ago: fa
+      bulk_menu_title: Elementi selezionati
+      chose_all: Seleziona tutto
+      chosen: Selezionato %{name}
+      clear_all: Pulisci
+      down: Giù
+      filter: Filtro
+      filter_date_format: dd/mm/yy
+      log_out: Esci
+      navigation: Navigazione
+      refresh: Ricarica
+      remove: Rimuovi
+      search: Cerca
+      show_all: Mostra tutto
+      up: Sopra
+    table_headers:
+      changes: Modifiche
+      created_at: Data/Ora
+      item: Elemento
+      last_used: Ultimo utilizzo
+      message: Messaggio
+      model_name: Nome modello
+      records: Elementi
+      username: Utente
+    home:
+      name: Home
+    pagination:
+      next: Prossima &raquo;
+      previous: "&laquo; Precedente"
+      truncate: "..."

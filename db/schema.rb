@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150425165114) do
+ActiveRecord::Schema.define(version: 20151008121550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "groups", force: :cascade do |t|
+    t.string   "name",        null: false
+    t.text     "description"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "oauth_access_grants", force: :cascade do |t|
     t.integer  "resource_owner_id",             null: false
@@ -55,6 +63,24 @@ ActiveRecord::Schema.define(version: 20150425165114) do
   end
 
   add_index "oauth_applications", ["uid"], name: "index_oauth_applications_on_uid", unique: true, using: :btree
+
+  create_table "roles", force: :cascade do |t|
+    t.string   "name",        null: false
+    t.text     "description"
+    t.integer  "group_id",    null: false
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_roles", force: :cascade do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "role_id",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_roles", ["user_id", "role_id"], name: "index_user_roles_on_user_id_and_role_id", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                       limit: 255, default: "",    null: false
@@ -103,6 +129,7 @@ ActiveRecord::Schema.define(version: 20150425165114) do
     t.string   "birthplace_district"
     t.string   "city_district"
     t.integer  "approver_id"
+    t.integer  "member_type",                             default: 0,     null: false
   end
 
   add_index "users", ["approved"], name: "index_users_on_approved", using: :btree

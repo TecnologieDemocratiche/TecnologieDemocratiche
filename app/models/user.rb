@@ -1,10 +1,15 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable, :registerable, :confirmable
 
+  has_many :user_roles, dependent: :destroy
+  has_many :roles, through: :user_roles
+  has_many :groups, through: :roles
+
   validates :name, :last_name, :email, :birthdate, :birthplace, :birthplace_district,
             :gender, :tax_code, :address, :city, :city_district, :zip_code, :payment_type, presence: true
   validates_format_of :email, with: /\A.+@.+\..+\z/i
   validates :document, presence: true, on: :create
+  validates :member_type, presence: true
   validates :accept_cookies, acceptance: {accept: true}
   validates :accept_real_info, acceptance: {accept: true}
   validates :accept_privacy, acceptance: {accept: true}
@@ -26,6 +31,7 @@ class User < ActiveRecord::Base
                                                    'image/jpeg', 'image/gif', 'image/png']
 
   enum payment_type: [:not_yet, :paypal, :bank_transfer]
+  enum member_type: [:standard, :collaborative]
 
   STATUSES = {
     approved: I18n.t('simple_form.labels.user.statuses.approved'),

@@ -49,6 +49,13 @@
         .columns.small-4
           = f.input :city_district, collection: @districts
     fieldset
+      legend = t('legends.member_informations')
+      = f.input :member_type, as: :radio_buttons, boolean_style: :inline,
+                collection: User.member_types.map { |k, v| [t("member_type.#{k}"), k] }
+      .roles-panel[data-roles-panel]
+        - Group.includes(:roles).order(:position).each do |group|
+          = f.input :role_ids, as: :check_boxes, collection: group.roles, label: group.name
+    fieldset
       legend = t('legends.documentation')
       .row
         .columns.small-6

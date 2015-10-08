@@ -2,8 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .scrollable {
-  max-height: 250px;
+  max-height: 180px;
   overflow-y: auto;
+  &, p, ul, li {
+    font-size: 0.8rem;
+  }
 }
 
 .login-helper-link {
@@ -20,4 +23,8 @@
 .green-text {
   font-size: 1.1em;
   color: #43ac6a;
+}
+
+.roles-panel {
+  display: none;
 }

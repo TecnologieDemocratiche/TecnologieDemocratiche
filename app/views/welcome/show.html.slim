@@ -7,3 +7,4 @@ p = t('.valuable_member')
   p
     = link_to t('buttons.edit_users'), users_path, class: 'button primary'
     = link_to t('buttons.manage_apps'), '/oauth/applications', class: 'button primary'
+    = link_to t('buttons.manage_roles'), '/admin', class: 'button primary', data: { no_turbolink: true }

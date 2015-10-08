@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       @users = @users.where(approved: false).where.not(confirmed_at: nil)
     end
 
-    @users = @users.paginate(page: params[:page], per_page: 20)
+    @users = @users.page(params[:page]).per(20)
   end
 
   def new
@@ -60,9 +60,9 @@ class UsersController < ApplicationController
   def user_params
     params[:user].permit(:email, :password,
                          :approved,
-                         :name, :last_name, :gender,
+                         :name, :last_name, :gender, :member_type,
                          :birthdate, :birthplace, :birthplace_district,
                          :address, :city, :city_district, :zip_code,
-                         :tax_code, :member_since, :member_until, :approver_id)
+                         :tax_code, :member_since, :member_until, :approver_id, role_ids: [])
   end
 end

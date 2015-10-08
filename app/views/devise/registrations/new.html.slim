@@ -44,9 +44,17 @@ h2 = t('.title')
       .columns.medium-4
         = f.input :city_district, collection: District.all.invert
   fieldset
+    legend = t('legends.member_informations')
+    = f.input :member_type, as: :radio_buttons, boolean_style: :inline,
+              collection: User.member_types.map { |k, v| [t("member_type.#{k}"), k] }
+    .roles-panel[data-roles-panel]
+      - Group.includes(:roles).order(:position).each do |group|
+        = f.input :role_ids, as: :check_boxes, collection: group.roles, label: group.name
+  fieldset
     legend = t('legends.correct_infos')
     .panel
-      = render t('.text_partials.correct_infos_text')
+      .scrollable
+        = render t('.text_partials.correct_infos_text')
     = f.input :accept_real_info, required: true
   fieldset
     legend = t('legends.privacy')

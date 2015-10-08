@@ -44,6 +44,7 @@ it:
         zip_code: CAP
         payment_type: Hai già provveduto al pagamento della quota di iscrizione?
         payment_recipe: Ricevuta di pagamento quota associativa
+        member_type: Tipologia
         document: Documento d'identità valido (fronte e retro)
         accept_real_info: Lo dichiaro
         accept_privacy: Accetto

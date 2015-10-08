@@ -69,10 +69,14 @@ it:
     sign_in_with: "Login tramite %{provider}"
     edit_users: "Modifica utenti"
     manage_apps: "Gestisci applicazioni"
+    manage_roles: "Gestisci ruoli"
   payment_type:
     not_yet: "Non ancora"
     paypal: "Si. Con PayPal"
     bank_transfer: "Si. Con Bonifico"
+  member_type:
+    standard: "Socio standard"
+    collaborative: "Socio collaborativo"
   activerecord:
     errors:
       models:
@@ -160,5 +164,8 @@ it:
         birthdate: "Data di nascita"
         member_since: "Membro dal"
         member_until: "Membro fino al"
+        member_type: "Tiplogia"
       edit_link: "Modifica utente"
       list_users_link: "Torna all'elenco"
+  legends:
+    member_informations: "Ruolo all'interno dell'associazione"

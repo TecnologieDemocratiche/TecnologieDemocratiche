@@ -16,6 +16,15 @@ fieldset
     dd = @user.member_since
     dt = t('.labels.member_until')
     dd = @user.member_until
+    dt = t('.labels.member_type')
+    dd = @user.member_type
+    - if @user.collaborative?
+      dt = t('.labels.roles')
+      - @user.groups.uniq.each do |group|
+        dd = "#{group.name}: "
+        - @user.roles.where(group: group).each do |role|
+          = link_to role.name, rails_admin.show_path('Role', role.id), data: { no_turbolink: true }
+          br
 fieldset
   legend = t('documents')
   - if @user.payment_recipe.exists?

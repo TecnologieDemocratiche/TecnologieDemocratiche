@@ -44,6 +44,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    acts_as_list (0.7.2)
+      activerecord (>= 3.0)
     addressable (2.3.8)
     arel (6.0.3)
     ast (2.1.0)
@@ -129,6 +131,8 @@ GEM
       sass (>= 3.3.0, < 3.5)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    haml (4.0.7)
+      tilt
     htmlentities (4.3.4)
     i18n (0.7.0)
     interception (0.5)
@@ -142,7 +146,12 @@ GEM
     jquery-turbolinks (2.1.0)
       railties (>= 3.1.0)
       turbolinks
+    jquery-ui-rails (5.0.5)
+      railties (>= 3.2.16)
     json (1.8.3)
+    kaminari (0.16.3)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     launchy (2.4.3)
       addressable (~> 2.3)
     letter_opener (1.4.1)
@@ -159,6 +168,7 @@ GEM
     minitest (5.8.1)
     multi_json (1.11.2)
     multipart-post (2.0.0)
+    nested_form (0.3.2)
     newrelic_rpm (3.13.2.302)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
@@ -189,6 +199,9 @@ GEM
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.4)
+    rack-pjax (0.8.0)
+      nokogiri (~> 1.5)
+      rack (~> 1.1)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.4)
@@ -213,6 +226,20 @@ GEM
     rails_12factor (0.0.3)
       rails_serve_static_assets
       rails_stdout_logging
+    rails_admin (0.7.0)
+      builder (~> 3.1)
+      coffee-rails (~> 4.0)
+      font-awesome-rails (>= 3.0, < 5)
+      haml (~> 4.0)
+      jquery-rails (>= 3.0, < 5)
+      jquery-ui-rails (~> 5.0)
+      kaminari (~> 0.14)
+      nested_form (~> 0.3)
+      rack-pjax (~> 0.7)
+      rails (~> 4.0)
+      remotipart (~> 1.0)
+      safe_yaml (~> 1.0)
+      sass-rails (>= 4.0, < 6)
     rails_serve_static_assets (0.0.4)
     rails_stdout_logging (0.0.4)
     railties (4.2.4)
@@ -223,6 +250,7 @@ GEM
     rainbow (2.0.0)
     rake (10.4.2)
     rdoc (4.2.0)
+    remotipart (1.2.1)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
     rspec-core (3.3.2)
@@ -249,6 +277,7 @@ GEM
       rainbow (>= 1.99.1, < 3.0)
       ruby-progressbar (~> 1.4)
     ruby-progressbar (1.7.5)
+    safe_yaml (1.0.4)
     sass (3.4.18)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -300,9 +329,6 @@ GEM
     uniform_notifier (1.9.0)
     warden (1.2.3)
       rack (>= 1.0)
-    will_paginate (3.0.7)
-    will_paginate-foundation (5.3.4)
-      will_paginate (>= 3.0.3)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -310,6 +336,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_list
   aws-sdk (< 2.0)
   better_errors
   binding_of_caller
@@ -345,6 +372,7 @@ DEPENDENCIES
   quiet_assets
   rails (~> 4.2.0)
   rails_12factor
+  rails_admin
   responders
   rspec-rails
   rubocop
@@ -357,8 +385,6 @@ DEPENDENCIES
   spring
   turbolinks
   uglifier
-  will_paginate
-  will_paginate-foundation
 
 BUNDLED WITH
    1.10.6

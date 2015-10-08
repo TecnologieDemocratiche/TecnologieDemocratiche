@@ -21,4 +21,8 @@ Rails.application.routes.draw do
       get '/me' => 'credentials#me'
     end
   end
+
+  constraints admin_required do
+    mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  end
 end
