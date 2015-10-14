@@ -1,2 +1,3 @@
 h1 = t('.title')
 = render 'form'
+= link_to t('buttons.list_users_link'), users_path, class: 'button' if can? :index, User

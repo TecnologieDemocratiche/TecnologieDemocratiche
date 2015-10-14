@@ -75,7 +75,7 @@ it:
     paypal: "Si. Con PayPal"
     bank_transfer: "Si. Con Bonifico"
   member_type:
-    standard: "Socio standard"
+    standard: "Socio ordinario"
     collaborative: "Socio collaborativo"
   activerecord:
     errors:
@@ -166,6 +166,7 @@ it:
         member_until: "Membro fino al"
         member_type: "Tiplogia"
       edit_link: "Modifica utente"
-      list_users_link: "Torna all'elenco"
+  buttons:
+    list_users_link: "Torna all'elenco"
   legends:
     member_informations: "Ruolo all'interno dell'associazione"
