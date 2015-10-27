@@ -4,7 +4,7 @@ Devise::Mailer.layout 'email_responsive'
 
 Devise.setup do |config|
   config.secret_key = ENV['DEVISE_SECRET_KEY']
-  config.mailer_sender = 'info@tecnologiedemocratiche.it'
+  config.mailer_sender = ENV['TD_EMAIL']
 
   require 'devise/orm/active_record'
 

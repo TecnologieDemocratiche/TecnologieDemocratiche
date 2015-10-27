@@ -10,8 +10,7 @@ ADMIN_NAME: "Marco"
 ADMIN_LAST_NAME: "Rossi"
 
 # sender of emails
-TD_EMAIL: 'test@tecnologiedemocratiche.it'
-
+TD_EMAIL: 'Tecnologie Democratiche <test@tecnologiedemocratiche.it>'
 
 AWS_BUCKET: ''
 AWS_ACCESS_KEY_ID: ''
