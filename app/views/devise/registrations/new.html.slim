@@ -5,11 +5,15 @@ h2 = t('.title')
   fieldset
     legend = t('legends.documentation')
     = f.input :payment_type, as: :select, collection: User.payment_types.map { |k, v| [t("payment_type.#{k}"), k] }, include_blank: false
+    .paypal-box[data-paypal]
+      = link_to t('buttons.pay_with_paypal'),
+                "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=#{ENV['PAYPAL_MERCHANT_ID']}",
+                target: :_blank
     = f.input :payment_recipe
     = f.input :document
   fieldset
     legend = t('legends.account_data')
-    = f.input :email, autofocus: true
+    = f.input :email
     = f.input :password, required: true
     = f.input :password_confirmation, required: true
   fieldset
@@ -21,7 +25,7 @@ h2 = t('.title')
         = f.input :last_name
     .row
       .columns.medium-4
-        = f.input :birthdate, as: :string, input_html: {type: :date}
+        = f.input :birthdate, as: :string, input_html: { type: :date, placeholder: 'dd/mm/yyyy' }
       .columns.medium-6
         .row
           .columns.medium-8
@@ -40,7 +44,7 @@ h2 = t('.title')
           .columns.medium-8
             = f.input :city
           .columns.medium-4
-            = f.input :zip_code
+            = f.input :zip_code, input_html: { maxlength: 5 }
       .columns.medium-4
         = f.input :city_district, collection: District.all.invert
   fieldset

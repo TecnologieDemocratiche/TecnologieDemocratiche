@@ -1,6 +1,9 @@
 h2 = t('.title')
 = simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: {method: :post}) do |f|
-  = f.error_notification
+  - if resource.errors.any?
+    - @user.errors.full_messages.each do |msg|
+      .alert-box.alert
+        = msg
   = f.full_error :confirmation_token
   .form-inputs
     = f.input :email, required: true, autofocus: true

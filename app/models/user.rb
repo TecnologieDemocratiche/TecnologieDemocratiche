@@ -6,14 +6,15 @@ class User < ActiveRecord::Base
   has_many :groups, through: :roles
 
   validates :name, :last_name, :email, :birthdate, :birthplace, :birthplace_district,
-            :gender, :tax_code, :address, :city, :city_district, :zip_code, :payment_type, presence: true
+            :gender, :tax_code, :address, :city, :city_district, :payment_type, presence: true
   validates_format_of :email, with: /\A.+@.+\..+\z/i
   validates :document, presence: true, on: :create
   validates :member_type, presence: true
-  validates :accept_cookies, acceptance: {accept: true}
-  validates :accept_real_info, acceptance: {accept: true}
-  validates :accept_privacy, acceptance: {accept: true}
-  validates :accept_terms, acceptance: {accept: true}
+  validates :zip_code, presence: true, length: { maximum: 5 }, numericality: { only_integer: true }
+  validates :accept_cookies, acceptance: { accept: true }
+  validates :accept_real_info, acceptance: { accept: true }
+  validates :accept_privacy, acceptance: { accept: true }
+  validates :accept_terms, acceptance: { accept: true }
   validates :tax_code, uniqueness: true
   validate :valid_tax_code
 
@@ -86,7 +87,7 @@ class User < ActiveRecord::Base
   end
 
   def as_json(_options = {})
-    {id: id, name: name, last_name: last_name, tax_code: tax_code, gender: gender, email: email}
+    { id: id, name: name, last_name: last_name, tax_code: tax_code, gender: gender, email: email }
   end
 
   # TODO: I18n
@@ -100,7 +101,7 @@ class User < ActiveRecord::Base
   def calculated_tax_code
     CodiceFiscaleTools.calculate(name: name,
                                  surname: last_name,
-                                 gender: {'M' => :male, 'F' => :female}[gender],
+                                 gender: { 'M' => :male, 'F' => :female }[gender],
                                  birthdate: birthdate,
                                  province_code: birthplace_district,
                                  city_name: birthplace)
