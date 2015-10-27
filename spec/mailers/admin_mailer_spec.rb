@@ -35,7 +35,7 @@ describe AdminMailer do
     end
 
     it 'sets the correct sender' do
-      expect(@sent_email.from).to eq([ENV['TD_EMAIL']])
+      expect(@sent_email.from).to eq('test@tecnologiedemocratiche.it')
     end
 
     it 'sets the correct body' do
