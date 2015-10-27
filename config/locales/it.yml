@@ -10,7 +10,7 @@ it:
         copy_url: "Oppure copia il seguente testo nella barra degli indirizzi del programma con cui navighi su internet:"
         not_payed_yet?: "Non hai ancora effettuato il pagamento?"
         choose_payment_method: "Versa la quota associativa annuale di 20€ nel modo che preferisci:"
-        paypal_payment: "Iscrizione rapida cliccando sul pulsante PayPal qui sotto:"
+        paypal_payment: "Iscrizione rapida cliccando sul link PayPal qui sotto:"
         bank_payment: "Oppure tramite bonifico su conto corrente:"
         bank_details_html: "IBAN: IT76L0316501600000011758905 <br> BIC/SWIFT: IWBKITMM <br> Banca: IW BANK <br> Intestato a: Tecnologie Democratiche"
         send_payment_recipe: "Inviaci la ricevuta di pagamento tramite email a info@tecnologiedemocratiche.it, usando l'indirizzo %{email}"
@@ -60,6 +60,7 @@ it:
         become_member: "Diventa Socio di Tecnologie Democratiche!"
         why_become_member_html: "Con solo 20 € ci aiuterai a migliorare la piattaforma Airesis e ne otterrai l'accesso in <strong>Modalità certificata</strong>!"
   buttons:
+    list_users_link: "Torna all'elenco"
     login: "Login"
     logout: "Logout"
     sign_up: "Registrati"
@@ -70,6 +71,7 @@ it:
     edit_users: "Modifica utenti"
     manage_apps: "Gestisci applicazioni"
     manage_roles: "Gestisci ruoli"
+    pay_with_paypal: "Paga ora tramite PayPal"
   payment_type:
     not_yet: "Non ancora"
     paypal: "Si. Con PayPal"
@@ -166,7 +168,5 @@ it:
         member_until: "Membro fino al"
         member_type: "Tiplogia"
       edit_link: "Modifica utente"
-  buttons:
-    list_users_link: "Torna all'elenco"
   legends:
     member_informations: "Ruolo all'interno dell'associazione"

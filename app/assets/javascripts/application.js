@@ -23,7 +23,7 @@
 
 $(function () {
     $(document).foundation();
-    $('form').formValidation({
+    $('form[name!="paypal"]').formValidation({
         framework: 'foundation',
         icon: {
             valid: 'fa fa-check',

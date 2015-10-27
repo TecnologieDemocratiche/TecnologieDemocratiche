@@ -18,5 +18,6 @@
     .columns.medium-5
       .green-text
         =t('.why_become_member_html')
+      = render 'layouts/shared/paypal_form'
   = link_to t('buttons.confirmation_instructions'), new_confirmation_path(resource_name)
 

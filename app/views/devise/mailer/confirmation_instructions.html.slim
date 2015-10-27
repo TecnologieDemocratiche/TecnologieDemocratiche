@@ -42,7 +42,7 @@ table.row.callout
             p
               = t('.paypal_payment')
             p
-              ' PULSANTE
+              = link_to "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=#{ENV['PAYPAL_MERCHANT_ID']}"
             p
               = t('.bank_payment')
             p
