@@ -58,7 +58,8 @@ describe AdminMailer do
     end
 
     it 'does not alert the Administrators' do
-      expect(@sent_email.body.encoded).not_to include(I18n.t('admin_mailer.new_user_waiting_for_approval.validate_tax_code_link'))
+      expect(@sent_email.body.encoded).
+        not_to include(I18n.t('admin_mailer.new_user_waiting_for_approval.validate_tax_code_link'))
     end
   end
 
@@ -75,7 +76,8 @@ describe AdminMailer do
     end
 
     it 'alerts the Administrators' do
-      expect(@sent_email.body.encoded).to include(I18n.t('admin_mailer.new_user_waiting_for_approval.validate_tax_code_link'))
+      expect(@sent_email.body.encoded).
+        to include(I18n.t('admin_mailer.new_user_waiting_for_approval.validate_tax_code_link'))
     end
   end
 end

@@ -1,3 +1,8 @@
+# secrets
+SECRET_KEY_BASE: 'rake secret'
+DEVISE_SECRET_KEY: 'rake secret'
+DEVISE_PEPPER: 'rake secret'
+
 # admin credentials
 ADMIN_EMAIL: "test@tecnologiedemocratiche.it"
 ADMIN_PASSWORD: "mysuperpassword"
