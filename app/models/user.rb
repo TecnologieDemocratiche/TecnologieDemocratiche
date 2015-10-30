@@ -40,8 +40,6 @@ class User < ActiveRecord::Base
     waiting_for_email: I18n.t('simple_form.labels.user.statuses.waiting_for_email_confirmation')
   }
 
-  after_commit :notify_admin, on: :create
-
   before_save :notify_user, if: proc { |user| user.approved? && user.approved_changed? }
 
   before_validation :remove_approver, if: proc { |user| !user.approved? && user.approved_changed? }
@@ -107,6 +105,19 @@ class User < ActiveRecord::Base
                                  city_name: birthplace)
   end
 
+  def after_confirmation
+    notify_admin
+    super
+  end
+
+  def notify_user
+    UserMailer.account_approved(self).deliver_now
+  end
+
+  def notify_admin
+    AdminMailer.new_user_waiting_for_approval(self).deliver_now
+  end
+
   private
 
   def approvation_fields_consistency
@@ -116,18 +127,11 @@ class User < ActiveRecord::Base
                I18n.t('activerecord.errors.models.user.attributes.approved.required')) if approver && !approved
   end
 
-  def notify_admin
-    AdminMailer.new_user_waiting_for_approval(self).deliver_now
-  end
-
   def valid_tax_code
     message = I18n.t('activerecord.errors.models.user.attributes.tax_code.invalid')
     errors.add(:tax_code, message) unless CodiceFiscaleTools.valid?(tax_code)
   end
 
-  def notify_user
-    UserMailer.account_approved(self).deliver_now
-  end
 
   def remove_approver
     self.approver = nil

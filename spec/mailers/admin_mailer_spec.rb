@@ -35,7 +35,7 @@ describe AdminMailer do
     end
 
     it 'sets the correct sender' do
-      expect(@sent_email.from).to eq('test@tecnologiedemocratiche.it')
+      expect(@sent_email.from).to eq(['test@tecnologiedemocratiche.it'])
     end
 
     it 'sets the correct body' do
@@ -51,10 +51,9 @@ describe AdminMailer do
       @user.tax_code = @user.calculated_tax_code
       @user.save!
       ActionMailer::Base.deliveries.clear
-
+      @user.confirm
       # manually calling callback since we are in test environment
-      AdminMailer.new_user_waiting_for_approval(@user).deliver_now
-      @sent_email = ActionMailer::Base.deliveries.first
+      @sent_email = ActionMailer::Base.deliveries.last
     end
 
     it 'does not alert the Administrators' do
@@ -65,14 +64,12 @@ describe AdminMailer do
 
   describe 'when a user with feasible invalid tax code registers' do
     before(:each) do
+      ActionMailer::Base.deliveries.clear
       @user = FactoryGirl.build(:user)
       @user.tax_code = 'NGLLNZ92R30C357W'
       @user.save!
-      ActionMailer::Base.deliveries.clear
-
-      # manually calling callback since we are in test environment
-      AdminMailer.new_user_waiting_for_approval(@user).deliver_now
-      @sent_email = ActionMailer::Base.deliveries.first
+      @user.confirm
+      @sent_email = ActionMailer::Base.deliveries.last
     end
 
     it 'alerts the Administrators' do
