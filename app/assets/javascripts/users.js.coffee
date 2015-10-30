@@ -1,5 +1,5 @@
 ready = ->
-  if $('.users.edit').length
+  if $('.edit_user').length
     datePrint = (date) ->
       date.toJSON().substring 0,10
     setDefaultMembershipDates = ->
