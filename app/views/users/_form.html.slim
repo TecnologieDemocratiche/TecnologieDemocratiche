@@ -13,9 +13,17 @@
       = f.input :approved
       .row
         .columns.small-6
-          = f.input :member_since, as: :string, input_html: { type: :date, value: @user.member_since ? @user.member_since.to_date : nil }
+          = f.input :member_since,
+                    as: :string,
+                    input_html: { type: :date,
+                                  placeholder: 'dd/mm/yyyy',
+                                  value: @user.member_since ? @user.member_since.to_date : nil }
         .columns.small-6
-          = f.input :member_until, as: :string, input_html: { type: :date, value: @user.member_until ? @user.member_until.to_date : nil }
+          = f.input :member_until,
+                    as: :string,
+                    input_html: { type: :date,
+                                  placeholder: 'dd/mm/yyyy',
+                                  value: @user.member_until ? @user.member_until.to_date : nil }
       = f.hidden_field :approver_id, value: current_user.id unless @user.approved?
     fieldset
       legend = t('legends.personal_data')
@@ -26,7 +34,7 @@
           = f.input :last_name
       .row
         .columns.small-4
-          = f.input :birthdate, as: :string, input_html: {type: :date}
+          = f.input :birthdate, as: :string, input_html: {type: :date, placeholder: 'dd/mm/yyyy'}
         .columns.small-6
           .row
             .columns.small-8
