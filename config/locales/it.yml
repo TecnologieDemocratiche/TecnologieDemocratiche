@@ -129,7 +129,7 @@ it:
       approved: "Tecnologie Democratiche è lieta di informarti che la tua iscrizione è stata approvata e che ora fai parte dell'associazione. Congratulazioni!"
       benefits_html: "<p class='lead'>Grazie alla tua iscrizione:</p>
                       <ul>
-                        <li>Potrai <strong>partecipare a tutte le <a href='http://www.tecnologiedemocratiche.it/statuto'>attività</a> dell'associazione</strong> in prima persona attraverso il <a href='https://www.airesis.it/groups/tecnologie-democratiche'>gruppo di Airesis</a> e il gruppo dell'<a href='http://www.airesis.it/groups/tecnologie-democratiche'>associazione Tecnologie Democratiche</a>.</li>
+                        <li>Potrai <strong>partecipare a tutte le <a href='http://www.tecnologiedemocratiche.it/statuto'>attività</a> dell'associazione</strong> in prima persona attraverso il <a href='https://www.airesis.it/groups/gruppo-di-sviluppo-airesis'>gruppo di Airesis</a> e il gruppo dell'<a href='http://www.airesis.it/groups/tecnologie-democratiche'>associazione Tecnologie Democratiche</a>.</li>
                         <li>Ottenere un'<strong>utenza certificata su Airesis</strong>.</li>
                         <li>Contribuire a diffondere la <strong>cultura democratica</strong> e i suoi <strong>strumenti innovativi</strong>.</li>
                         <li>Essere <strong>informato in tempo reale</strong> di tutte le nostre iniziative.</li>
@@ -170,3 +170,4 @@ it:
       edit_link: "Modifica utente"
   legends:
     member_informations: "Ruolo all'interno dell'associazione"
+  wait_please: "Attendere prego..."

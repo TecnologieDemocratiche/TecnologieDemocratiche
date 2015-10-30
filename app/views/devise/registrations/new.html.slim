@@ -15,7 +15,8 @@ h2 = t('.title')
     legend = t('legends.account_data')
     = f.input :email
     = f.input :password, required: true
-    = f.input :password_confirmation, required: true
+    = f.input :password_confirmation, required: true, input_html: { data: { fv_identical_field: 'user[password]',
+                                                                            fv_identical: true } }
   fieldset
     legend = t('legends.personal_data')
     .row
@@ -80,4 +81,4 @@ h2 = t('.title')
         = render t('.text_partials.cookies_text')
     = f.input :accept_cookies, required: true
   .form-actions
-    = f.submit class: 'button'
+    = f.submit class: 'button', data: { disable_with: t('wait_please') }
