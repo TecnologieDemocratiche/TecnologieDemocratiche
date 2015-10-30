@@ -1,0 +1,4 @@
+- if Rails.env.production?
+  script src="//cdn.ravenjs.com/1.2.0/jquery,native/raven.min.js"
+  javascript:
+    Raven.config('https://#{ENV['SENTRY_PUBLIC_KEY']}@app.getsentry.com/#{ENV['SENTRY_PORT']}').install();

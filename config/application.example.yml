@@ -23,3 +23,15 @@ MAIL_USERNAME: 'FROM MANDRILL'
 MAIL_PASSWORD: 'API KEY FROM MANDRILL'
 
 PAYPAL_MERCHANT_ID: 'from paypal'
+
+##############
+#sentry settings.
+#############
+#SENTRY_PUBLIC_KEY: "from sentry"
+#SENTRY_PRIVATE_KEY: "from sentry"
+#SENTRY_PORT: "from sentry"
+
+# new relic
+#NEW_RELIC_LICENSE_KEY: 'from newrelic'
+#NEW_RELIC_APP_NAME: 'Tecnologie Democratiche'
+
