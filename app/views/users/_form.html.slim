@@ -3,7 +3,7 @@
   .form-inputs
     fieldset
       legend = t('legends.account_data')
-      
+
       - if @user.status == :waiting_for_email
         = f.input :email, label: t('simple_form.labels.user.not_verified_email'), label_html: { class: "error" }
       - else
@@ -16,14 +16,14 @@
           = f.input :member_since,
                     as: :string,
                     required: true,
-                    input_html: { data: {datepicker: ''},
+                    input_html: { data: { datepicker: '' },
                                   placeholder: 'dd/mm/yyyy',
                                   value: @user.member_since ? (l @user.member_since.to_date) : nil }
         .columns.small-6
           = f.input :member_until,
                     as: :string,
                     required: true,
-                    input_html: { data: {datepicker: ''},
+                    input_html: { data: { datepicker: '' },
                                   placeholder: 'dd/mm/yyyy',
                                   value: @user.member_until ? (l @user.member_until.to_date) : nil }
       = f.hidden_field :approver_id, value: current_user.id unless @user.approved?
@@ -36,7 +36,9 @@
           = f.input :last_name
       .row
         .columns.small-4
-          = f.input :birthdate, as: :string, input_html: {type: :date, placeholder: 'dd/mm/yyyy'}
+          = f.input :birthdate, as: :string, input_html: { data: { datepicker: '' },
+                                                           placeholder: 'dd/mm/yyyy',
+                                                           value: @user.birthdate ? (l @user.birthdate.to_date) : nil } }
         .columns.small-6
           .row
             .columns.small-8
