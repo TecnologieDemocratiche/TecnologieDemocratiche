@@ -1,9 +1,11 @@
 <div class="panel callout">
   <h1>Authorize required</h1>
+
   <p class="h4">
     Authorize <strong class="text-info"><%= @pre_auth.client.name %></strong> to use your account?
   </p>
 
+  <!--
   <% if @pre_auth.scopes %>
       <div id="oauth-permissions">
         <p>This application will be able to:</p>
@@ -15,7 +17,7 @@
         </ul>
       </div>
   <% end %>
-
+   -->
   <div class="actions">
     <%= form_tag oauth_authorization_path, method: :post do %>
         <%= hidden_field_tag :client_id, @pre_auth.client.uid %>
