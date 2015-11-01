@@ -11,19 +11,21 @@
       -if @user.new_record?
         = f.input :password
       = f.input :approved
-      .row
+      .row[data-membership]
         .columns.small-6
           = f.input :member_since,
                     as: :string,
-                    input_html: { type: :date,
+                    required: true,
+                    input_html: { data: {datepicker: ''},
                                   placeholder: 'dd/mm/yyyy',
-                                  value: @user.member_since ? @user.member_since.to_date : nil }
+                                  value: @user.member_since ? (l @user.member_since.to_date) : nil }
         .columns.small-6
           = f.input :member_until,
                     as: :string,
-                    input_html: { type: :date,
+                    required: true,
+                    input_html: { data: {datepicker: ''},
                                   placeholder: 'dd/mm/yyyy',
-                                  value: @user.member_until ? @user.member_until.to_date : nil }
+                                  value: @user.member_until ? (l @user.member_until.to_date) : nil }
       = f.hidden_field :approver_id, value: current_user.id unless @user.approved?
     fieldset
       legend = t('legends.personal_data')

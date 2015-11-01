@@ -19,20 +19,8 @@
 //= require nprogress-turbolinks
 //= require formValidation.min
 //= require formValidation-foundation.min
+//= require foundation-datepicker.min
+//= require foundation-datepicker.it
 //= require_tree .
 
-$(function () {
-    $(document).foundation();
-    $('form[name!="paypal"]').formValidation({
-        framework: 'foundation',
-        icon: {
-            valid: 'fa fa-check',
-            invalid: 'fa fa-times',
-            validating: 'fa fa-refresh'
-        },
-        trigger: 'blur',
-        row: {
-            selector: '.input'
-        }
-    });
-});
+

@@ -12,10 +12,11 @@ fieldset
     dd = @user.email
     dt = t('.labels.birthdate')
     dd = @user.birthdate
-    dt = t('.labels.member_since')
-    dd = @user.member_since
-    dt = t('.labels.member_until')
-    dd = @user.member_until
+    -if @user.approved?
+      dt = t('.labels.member_since')
+      dd = l @user.member_since.to_date
+      dt = t('.labels.member_until')
+      dd = l @user.member_until.to_date
     dt = t('.labels.member_type')
     dd = @user.member_type
     - if @user.collaborative?

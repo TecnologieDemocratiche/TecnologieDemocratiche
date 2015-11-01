@@ -26,7 +26,7 @@ h2 = t('.title')
         = f.input :last_name
     .row
       .columns.medium-4
-        = f.input :birthdate, as: :string, input_html: { type: :date, placeholder: 'dd/mm/yyyy' }
+        = f.input :birthdate, as: :string, input_html: { data: {datepicker: ''}, placeholder: 'dd/mm/yyyy' }
       .columns.medium-6
         .row
           .columns.medium-8

@@ -125,13 +125,14 @@ class User < ActiveRecord::Base
                I18n.t('activerecord.errors.models.user.attributes.approver.required')) if !approver && approved
     errors.add(:approved,
                I18n.t('activerecord.errors.models.user.attributes.approved.required')) if approver && !approved
+    errors.add(:member_since,:required) if approved? && member_since.blank?
+    errors.add(:member_until,:required) if approved? && member_until.blank?
   end
 
   def valid_tax_code
     message = I18n.t('activerecord.errors.models.user.attributes.tax_code.invalid')
     errors.add(:tax_code, message) unless CodiceFiscaleTools.valid?(tax_code)
   end
-
 
   def remove_approver
     self.approver = nil
