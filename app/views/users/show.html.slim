@@ -11,7 +11,7 @@ fieldset
     dt = t('.labels.email')
     dd = @user.email
     dt = t('.labels.birthdate')
-    dd = @user.birthdate
+    dd = l @user.birthdate
     -if @user.approved?
       dt = t('.labels.member_since')
       dd = l @user.member_since.to_date
