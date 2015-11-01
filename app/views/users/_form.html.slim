@@ -38,7 +38,7 @@
         .columns.small-4
           = f.input :birthdate, as: :string, input_html: { data: { datepicker: '' },
                                                            placeholder: 'dd/mm/yyyy',
-                                                           value: @user.birthdate ? (l @user.birthdate.to_date) : nil } }
+                                                           value: @user.birthdate ? (l @user.birthdate.to_date) : nil }
         .columns.small-6
           .row
             .columns.small-8
