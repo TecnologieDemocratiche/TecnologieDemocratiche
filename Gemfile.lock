@@ -111,6 +111,9 @@ GEM
       railties (>= 3.2)
     dynopoker (1.3.2)
       logger
+    email_spec (1.6.0)
+      launchy (~> 2.1)
+      mail (~> 2.2)
     erubis (2.7.0)
     execjs (2.6.0)
     factory_girl (4.5.0)
@@ -352,6 +355,7 @@ DEPENDENCIES
   did_you_mean
   doorkeeper
   dynopoker
+  email_spec
   factory_girl_rails
   faker
   figaro

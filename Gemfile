@@ -52,6 +52,7 @@ group :test do
   gem 'capybara-webkit'
   gem 'capybara-screenshot'
   gem 'simplecov', require: false
+  gem 'email_spec'
 end
 
 group :production do

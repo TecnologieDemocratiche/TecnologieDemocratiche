@@ -27,5 +27,15 @@ FactoryGirl.define do
     accept_terms true
     admin false
     approved false
+
+    factory :admin do
+      tax_code 'RDOLSN86M19D704W'
+
+      after(:build) do |admin|
+        admin.skip_confirmation!
+        admin.confirm
+        admin.admin = true
+      end
+    end
   end
 end

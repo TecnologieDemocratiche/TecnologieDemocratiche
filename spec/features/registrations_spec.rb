@@ -29,6 +29,7 @@ describe 'registration process', type: :feature do
       find(:css, '#user_accept_privacy').set(true)
       find(:css, '#user_accept_terms').set(true)
     end
+
     it 'can register correctly filling all informations' do
       click_button I18n.t('helpers.submit.user.create')
       expect(User.count).to eq 1
