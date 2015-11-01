@@ -91,7 +91,7 @@ class User < ActiveRecord::Base
   # TODO: I18n
   def feasible_invalid_tax_code?
     calculated_tax_code != tax_code.upcase
-  rescue ArgumentError
+  rescue ArgumentError, RuntimeError
     true
   end
 
