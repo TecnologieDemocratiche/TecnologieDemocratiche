@@ -1,6 +1,6 @@
 # TECNOLOGIE DEMOCRATICHE
 
-Tecnologie Democratiche is a No-Profit association.
+Tecnologie Democratiche is a No Profit association.
 
 This application is the Application used for the management of the subscribers.
 It allows to register new people and gives them a login in the App which can be used in other websites.
