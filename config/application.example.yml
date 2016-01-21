@@ -12,9 +12,11 @@ ADMIN_LAST_NAME: "Rossi"
 # sender of emails
 TD_EMAIL: 'Tecnologie Democratiche <test@tecnologiedemocratiche.it>'
 
-AWS_BUCKET: ''
+S3_BUCKET_NAME: ''
 AWS_ACCESS_KEY_ID: ''
 AWS_SECRET_ACCESS_KEY: ''
+S3_HOST_NAME: 's3-eu-central-1.amazonaws.com'
+
 SENTRY_DSN: ''
 
 APP_HOST: 'localhost:3000'
