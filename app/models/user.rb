@@ -43,6 +43,7 @@ class User < ActiveRecord::Base
   before_save :notify_user, if: proc { |user| user.approved? && user.approved_changed? }
 
   before_validation :remove_approver, if: proc { |user| !user.approved? && user.approved_changed? }
+  before_validation :strip_whitespaces
 
   def full_name
     "#{name} #{last_name}"
@@ -119,6 +120,11 @@ class User < ActiveRecord::Base
   end
 
   private
+
+  def strip_whitespaces
+    fields = [:name, :last_name, :tax_code, :address, :zip_code, :city, :telephone]
+    fields.each { |field| write_attribute(field, read_attribute(field).strip) if read_attribute(field) }
+  end
 
   def approvation_fields_consistency
     errors.add(:approver,
